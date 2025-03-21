@@ -1,0 +1,43 @@
+{
+  "header": {
+    "loginButton": "Login",
+    "imageLogoAlt": "Logo",
+    "languageSwitcherLabel": "Language",
+    "searchPlaceholder": "Search by date, district or keyword ...",
+    "events": "Events",
+    "favorites": "Favorites",
+    "map": "Map",
+    "calendar": "Calendar"
+  },
+  "indexPage": {
+    "searchPlaceholder": "Search event, district, term, time ..."
+  },
+  "sorting": {
+    "filterButtonStart": "Filter",
+    "filterButtonCancel": "Cancel",
+    "sortSelectPlaceholder": "Sort by...",
+    "description": "Filter and sort events by keyword,district, date or time - so you can quickly find the right event.",
+    "date": {
+      "from": "From",
+      "until": "until",
+      "placeholderSorting": "Sort by date...",
+      "buttonAsc": "Earliest date first...",
+      "buttonDsc": "Latest date first...",
+      "validMessage": "The date entered is not valid.",
+      "pastMessage": "The date entered is in the past.",
+      "startBeforeEndMessage": "The start date entered is before the end date."
+    },
+    "time": {
+      "from": "From",
+      "until": "until",
+      "buttonAsc": "Earliest time first...",
+      "buttonDsc": "Latest time first...",
+      "validMessage": "The time entered is not valid.",
+      "startBeforeEndMessage": "The start time entered is before the end time."
+    },
+    "createdAt": {
+      "buttonAsc": "Newest events first...",
+      "buttonDsc": "Oldest Events first..."
+    }
+  }
+}
