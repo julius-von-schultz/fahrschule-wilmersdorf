@@ -1,14 +1,8 @@
 <template>
   <div class="header">
-    <ContentWrapper class="header__content-wrapper">
-      <NuxtImg src="/images/Logo-Fahrschule-Wilmersdorf.webp" />
-      <div>Hallo</div>
-    </ContentWrapper>
+    Test
   </div>
 </template>
-
-<script setup lang="ts">
-</script>
 
 <style scoped>
 .header {
