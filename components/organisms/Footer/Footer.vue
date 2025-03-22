@@ -7,10 +7,10 @@
       <ContentWrapper>
         <div class="footer__link-menu">
           <FooterLinkList
-              v-for="menu in linkColumns"
-              :key="menu.title"
-              v-bind="menu"
-              class="footer__link-menu-element"
+            v-for="menu in linkColumns"
+            :key="menu.title"
+            v-bind="menu"
+            class="footer__link-menu-element"
           />
         </div>
         <div class="footer__end">
@@ -18,27 +18,27 @@
           <div class="footer__end-item">Alle Rechte vorbehalten.</div>
           <div class="footer__end-item">
             <NuxtLink
-                to="https://www.tiktok.com/@fahrschulewilmersdorf"
-                title="Instagram"
-                class="footer__instagram"
+              to="https://www.tiktok.com/@fahrschulewilmersdorf"
+              title="Instagram"
+              class="footer__instagram"
             >
               <Icon
-                  class="footer__social-media-link"
-                  icon="icons8-instagram-50"
-                  type="svg"
-                  size="small"
+                class="footer__social-media-link"
+                icon="icons8-instagram-50"
+                type="svg"
+                size="small"
               />
             </NuxtLink>
             <NuxtLink
-                href="https://www.instagram.com/fahrschulewilmersdorf/"
-                title="Tiktok"
-                class="footer__tiktok"
+              href="https://www.instagram.com/fahrschulewilmersdorf/"
+              title="Tiktok"
+              class="footer__tiktok"
             >
               <Icon
-                  class="footer__social-media-link"
-                  icon="icons8-tiktok-50"
-                  type="svg"
-                  size="small"
+                class="footer__social-media-link"
+                icon="icons8-tiktok-50"
+                type="svg"
+                size="small"
               />
             </NuxtLink>
           </div>

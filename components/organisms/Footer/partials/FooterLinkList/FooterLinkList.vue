@@ -6,8 +6,12 @@
         v-for="(linkItem, index) in entries"
         :key="index"
         class="link-list__item"
+        :class="{'link-list__item--with-hover': linkItem.link }"
       >
-        <NuxtLink :to="linkItem.link">{{ linkItem.label }}</NuxtLink>
+        <NuxtLink v-if="linkItem.link" :to="linkItem.link">{{
+          linkItem.label
+        }}</NuxtLink>
+        <span v-else>{{ linkItem.label }}</span>
       </li>
     </ul>
   </div>
@@ -59,8 +63,10 @@ defineProps({
       @apply text-base;
     }
 
-    &:hover {
-      @apply underline;
+    &--with-hover {
+      &:hover {
+        @apply underline;
+      }
     }
   }
 }

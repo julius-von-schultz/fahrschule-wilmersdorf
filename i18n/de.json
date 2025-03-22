@@ -33,6 +33,12 @@
     "team": "Unser Team",
     "legal": "Rechtliches",
     "imprint": "Impressum",
-    "imageCredit": "Bildnachweise"
+    "imageCredit": "Bildnachweise",
+    "openingHours": "Bürozeiten",
+    "firstRow": "\uD83D\uDE97 Dienstag – Freitag",
+    "secondRow": "\uD83D\uDE97 Samstag",
+    "contactLabel": "Kontakt",
+    "mailLabel": "\uD83D\uDCE7 Mail:",
+    "telephoneLabel": "☎\uFE0F Telefon:"
   }
 }
