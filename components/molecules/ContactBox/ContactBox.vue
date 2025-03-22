@@ -7,9 +7,9 @@
       {{ t('contactBox.subline') }}
     </p>
     <FwButton
-        class="contact-box__button"
-        :label="t('contactBox.buttonLabel')"
-        to="/kontakt"
+      class="contact-box__button"
+      :label="t('contactBox.buttonLabel')"
+      to="/kontakt"
     />
   </ContentWrapper>
 </template>
@@ -24,6 +24,7 @@ const { t } = useI18n()
 .contact-box {
   align-self: center;
   @apply text-center;
+  @apply text-fw-dark-blue-1;
 
   &__headline {
     @apply text-5xl;

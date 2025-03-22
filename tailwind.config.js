@@ -45,6 +45,7 @@ export default {
       'fw-blue': '#3858E9',
       'fw-blue-2': '#6C84EF',
       'fw-dark-blue': '#1E2647',
+      'fw-dark-blue-1': '#353b59',
       'fw-white': '#FFFFFF',
     },
     extend: {},

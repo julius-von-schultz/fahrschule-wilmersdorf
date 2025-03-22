@@ -50,5 +50,46 @@
     "headline": "Noch Fragen? Kontaktiere uns!",
     "subline": "Unser Team steht dir jederzeit zur Verfügung. Wir freuen uns, von dir zu hören.",
     "buttonLabel": "Kontakt aufnehmen"
+  },
+  "studentReview": {
+    "subline": "Bewertungen",
+    "headline": "Was unsere Schüler über uns sagen",
+    "description": "Hier sind einige Rückmeldungen von zufriedenen Fahrschülern. Ihre Erfahrungen zeigen, dass jeder bei uns bestens aufgehoben ist – egal wer du bist!",
+    "review1": {
+      "headline": "Geduldig und kompetent erklärt!",
+      "text": "Ich habe meine Führerschein jetzt seit etwas länger als einem Jahr. Ich war mit meinem Fahrlehrer Peter sehr zufrieden. Er war Immer nett und konnte gut erklären, er ist nie sauer geworden oder so. Soweit ich weiß macht er jetzt auch seine eigene Fahrschule auf (Fahrschule Wilmersdorf glaube ich).",
+      "author": "Lara",
+      "authorRole": "Ehemalige Schülerin"
+    },
+    "review2": {
+      "headline": "Entspannt, klar und zuverlässig!",
+      "text": "Ich bin total glücklich! Mein Fahrlehrer Peter hat mich super gut ausgebildet. Ich kann ihn wärmstens empfehlen. Er hat eine entspannte Art einem das Fahren beizubringen und erklärt wirklich gut. Ich hatte sehr regelmäßig Termine zum Fahren und bin so sehr gut in der Praxis geblieben.",
+      "author": "Leona",
+      "authorRole": "Ehemalige Schülerin"
+    },
+    "review3": {
+      "headline": "Sympathisch, entspannt und bestens vorbereitet!",
+      "text": "Ich kann jedem, der Peter als Fahrlehrer bekommt, nur gratulieren und viel Spaß wünschen. Denn bei ihm werdet ihr nicht nur gut vorbereitet, ihr werdet auch einen der sympathischsten und entspanntesten Beifahrer in eurem Auto haben, welchen ihr nach bestandener Prüfung mit Sicherheit vermissen werdet.",
+      "author": "Tülin",
+      "authorRole": "Ehemalige Schülerin"
+    },
+    "review4": {
+      "headline": "Geduldig, verständnisvoll und top vorbereitet!",
+      "text": "Letzte Woche den Führschein erworben. Peter kann ich als Fahrlehrer nur empfehlen. Auch wenn man als Fahrschüler mal ne schlechte Phase aus welchen Gründen auch immer hat, bleibt Peter geduldig und entgegnet dem mit Verständnis. Er hat mich super auf die praktische Prüfung vorbereitet.\nEr äußert konstruktive Kritik (=Tipps) und Meckert nicht, zudem nimmt er Kritik auch an.\nAuch wenn ich froh bin, die Prüfungen bestanden zu haben, war's ne schöne Zeit!",
+      "author": "Henri",
+      "authorRole": "Ehemaliger Schüler"
+    },
+    "review5": {
+      "headline": "Erfolgreich beim ersten Versuch!",
+      "text": "Mein Fahrlehrer war Peter und hat mir alles hervorragend zum Thema Autofahren beigebracht, sodass ich auch direkt bei der ersten Prüfung bestanden hab :) Kann ich nur weiterempfehlen!",
+      "author": "Luca Magnago",
+      "authorRole": "Ehemaliger Schüler"
+    },
+    "review6": {
+      "headline": "Motivation und Unterstützung bis zum Ziel!",
+      "text": "\uD83D\uDE0A\uD83D\uDE0A\uD83D\uDE0A…hab während der gesamten Ausbildung Höhen und Tiefen erlebt aber wurde immer wieder ermutigt…ganz besonderen Dank an Peter ohne dich hätte ich es nicht geschafft…hast mich großartig bei der Praxis unterstützt und wirst mir echt fehlen als Beifahrer \uD83D\uDE05",
+      "author": "Marcus B.",
+      "authorRole": "Ehemaliger Schüler"
+    }
   }
 }
