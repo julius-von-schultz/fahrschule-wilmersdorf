@@ -1,7 +1,5 @@
 <template>
-  <div class="index-page">
-    Hallo
-  </div>
+  <div class="index-page">Hallo</div>
 </template>
 
 <style lang="scss">

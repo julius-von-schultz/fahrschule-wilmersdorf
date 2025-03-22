@@ -2,18 +2,18 @@
   <div class="header">
     <ContentWrapper class="header__content-wrapper">
       <NuxtImg src="/images/Logo-Fahrschule-Wilmersdorf.webp" />
-      <div>Hallo</div>
+      <MainNavigation />
     </ContentWrapper>
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .header {
   @apply bg-fw-blue;
   @apply text-fw-white;
+  @apply py-6;
 
   &__content-wrapper {
     @apply flex flex-row;

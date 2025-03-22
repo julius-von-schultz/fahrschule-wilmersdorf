@@ -57,11 +57,7 @@ onLanguageSwitched('switcher', () => {
     @apply border-2 rounded-xl;
 
     @screen lg {
-      @apply text-cb-white;
-    }
-
-    &:hover {
-      @apply text-cb-green-lighter;
+      @apply text-fw-white;
     }
   }
 
@@ -80,10 +76,10 @@ onLanguageSwitched('switcher', () => {
     @apply h-full;
     @apply p-0;
     @apply rounded-md;
-    @apply bg-cb-white;
+    @apply bg-fw-white;
     @apply relative;
     @apply border-2;
-    @apply border-cb-grey-6;
+    @apply border-fw-grey-6;
     right: 4.5rem;
 
     @screen lg {
@@ -97,15 +93,14 @@ onLanguageSwitched('switcher', () => {
     @apply text-sm;
     @apply leading-5;
     @apply py-3 px-4;
-    @apply text-cb-grey-11;
+    @apply text-fw-grey-11;
 
     @screen lg {
       @apply text-base;
     }
 
     &:hover {
-      @apply bg-cb-green;
-      @apply text-cb-white;
+      @apply text-fw-white;
     }
   }
 }

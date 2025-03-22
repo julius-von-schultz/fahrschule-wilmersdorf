@@ -1,7 +1,5 @@
 <template>
-  <div class="header">
-    Test
-  </div>
+  <div class="header">Test</div>
 </template>
 
 <style scoped>
