@@ -3,9 +3,9 @@
     <div class="home-stage__inner-wrapper">
       <div class="home-stage__img-wrapper">
         <NuxtImg
-            src="/images/beautiful-female-women-driver-sitting-her-vehicle-holding-car-keys-ready-drive.webp"
-            class="home-stage__img"
-            format="webp"
+          src="/images/beautiful-female-women-driver-sitting-her-vehicle-holding-car-keys-ready-drive.webp"
+          class="home-stage__img"
+          format="webp"
         />
       </div>
       <div class="home-stage__text-container">
@@ -15,12 +15,15 @@
         <p class="home-stage__description">
           {{ t('homeStage.subline') }}
         </p>
-        <button>Hallo</button>
+        <FwButton
+          class="home-stage__button"
+          :label="t('homeStage.buttonLabel')"
+          to="/kontakt"
+        />
       </div>
     </div>
   </div>
 </template>
-
 
 <script setup>
 import { useI18n } from 'vue-i18n'
@@ -38,7 +41,7 @@ $home-stage-height-xl: 620px;
   @apply w-full;
   @apply text-fw-white;
   height: $home-stage-height-xs;
-  position: relative; // Ermöglicht absolute Positionierung der Kinder
+  @apply relative;
 
   @screen md {
     height: $home-stage-height-md;
@@ -71,7 +74,7 @@ $home-stage-height-xl: 620px;
   }
 
   &__img-wrapper::after {
-    content: "";
+    content: '';
     @apply absolute;
     top: 0;
     left: 0;
@@ -102,6 +105,14 @@ $home-stage-height-xl: 620px;
     @screen md {
       @apply text-6xl;
     }
+  }
+
+  &__description {
+    @apply mb-9;
+  }
+
+  &__button {
+    justify-self: center;
   }
 }
 </style>

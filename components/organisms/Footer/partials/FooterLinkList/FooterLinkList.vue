@@ -6,7 +6,7 @@
         v-for="(linkItem, index) in entries"
         :key="index"
         class="link-list__item"
-        :class="{'link-list__item--with-hover': linkItem.link }"
+        :class="{ 'link-list__item--with-hover': linkItem.link }"
       >
         <NuxtLink v-if="linkItem.link" :to="linkItem.link">{{
           linkItem.label

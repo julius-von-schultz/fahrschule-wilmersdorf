@@ -8,6 +8,7 @@
       :link="entry.link"
       :subentries="entry.subentries"
     />
+    <LanguageSwitcher />
   </div>
 </template>
 
@@ -85,7 +86,6 @@ const entries = computed(() => [
       },
     ],
   },
-  { index: 4, label: t('header.language'), link: '/' },
 ])
 </script>
 

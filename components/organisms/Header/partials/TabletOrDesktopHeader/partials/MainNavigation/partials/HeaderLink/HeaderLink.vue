@@ -72,19 +72,19 @@ const changeActivated = () => {
   &__sub-menu {
     @apply absolute;
     @apply bg-fw-blue;
-    @apply border;
-    @apply border-fw-grey-11;
-    @apply font-medium;
+    @apply border-2;
+    @apply border-fw-grey-6;
+    @apply leading-5;
     @apply text-lg;
     z-index: 5;
+    @apply rounded-sm;
   }
 
   &__sub-entry {
-    @apply p-4;
+    @apply py-3 px-4;
 
     &:hover {
       @apply bg-fw-blue-2;
-      @apply text-fw-yellow-2;
     }
   }
 }

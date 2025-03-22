@@ -49,12 +49,14 @@ onLanguageSwitched('switcher', () => {
 
 <style lang="scss">
 .language-switcher {
+  z-index: 5;
+
   &__button {
     @apply flex flex-row;
     @apply gap-x-3;
     @apply cursor-pointer;
-    @apply p-3;
-    @apply border-2 rounded-xl;
+    @apply text-xl;
+    @apply font-medium;
 
     @screen lg {
       @apply text-fw-white;
@@ -75,8 +77,8 @@ onLanguageSwitched('switcher', () => {
     @apply overflow-hidden;
     @apply h-full;
     @apply p-0;
-    @apply rounded-md;
-    @apply bg-fw-white;
+    @apply rounded-sm;
+    @apply bg-fw-blue;
     @apply relative;
     @apply border-2;
     @apply border-fw-grey-6;
@@ -90,14 +92,10 @@ onLanguageSwitched('switcher', () => {
 
   &__option {
     @apply pl-2.5;
-    @apply text-sm;
+    @apply text-lg;
     @apply leading-5;
     @apply py-3 px-4;
-    @apply text-fw-grey-11;
-
-    @screen lg {
-      @apply text-base;
-    }
+    @apply text-fw-white;
 
     &:hover {
       @apply text-fw-white;

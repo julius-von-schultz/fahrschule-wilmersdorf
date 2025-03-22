@@ -13,7 +13,7 @@
     "contact": "Kontakt",
     "contactForm": "Kontaktformular",
     "contactLocation": "Standort",
-    "language": "Sprache",
+    "languageSwitcherLabel": "Sprache",
     "german": "Deutsch",
     "english": "Englisch"
   },
@@ -45,5 +45,10 @@
     "headline": "Dein Weg zum Führerschein – professionell und sicher",
     "subline": "Starte mit uns durch! Moderne Fahrkurse, individuelle Betreuung und sichere Vorbereitung – wir begleiten dich auf jeder Etappe zum Erfolg.",
     "buttonLabel": "Hier geht's zum Kontakt"
+  },
+  "contactBox": {
+    "headline": "Noch Fragen? Kontaktiere uns!",
+    "subline": "Unser Team steht dir jederzeit zur Verfügung. Wir freuen uns, von dir zu hören.",
+    "buttonLabel": "Kontakt aufnehmen"
   }
 }

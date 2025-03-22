@@ -13,7 +13,7 @@
     "contact": "Contact",
     "contactForm": "Contact form",
     "contactLocation": "Location",
-    "language": "Language",
+    "languageSwitcherLabel": "Language",
     "german": "German",
     "english": "English"
   },
@@ -45,5 +45,10 @@
     "headline": "Your way to a driving licence – professionally and safely",
     "subline": "Take off with us! Modern driving courses, personalised support and safe preparation – we will accompany you to success at every stage.",
     "buttonLabel": "Click here to contact us"
+  },
+  "contactBox": {
+    "headline": "Any questions? \n Get in touch!",
+    "subline": "Our team is always at your disposal. We look forward to hearing from you.",
+    "buttonLabel": "Contact us"
   }
 }

@@ -4,22 +4,28 @@
       <h2 class="contact-details__headline">
         {{ t('footer.openingHours') }}
       </h2>
-      <p>{{t('footer.firstRow') }}: 14:00 - 17:00</p>
-      <p>{{t('footer.secondRow') }}: 10:00 - 13:00</p>
+      <p>{{ t('footer.firstRow') }}: 14:00 - 17:00</p>
+      <p>{{ t('footer.secondRow') }}: 10:00 - 13:00</p>
     </section>
     <address class="contact-details__address">
       <h2 class="contact-details__headline">
         {{ t('footer.contactLabel') }}
       </h2>
-      <NuxtLink to="mailto:fahrschule-wilmersdorf@berlin.de">{{ t('footer.mailLabel') }} fahrschule-wilmersdorf@berlin.de</NuxtLink>
+      <NuxtLink to="mailto:fahrschule-wilmersdorf@berlin.de"
+        >{{ t('footer.mailLabel') }} fahrschule-wilmersdorf@berlin.de</NuxtLink
+      >
       <br />
-      <NuxtLink to="tel:03027991827">{{ t('footer.telephoneLabel') }} 030 27991827</NuxtLink>
+      <NuxtLink to="tel:03027991827"
+        >{{ t('footer.telephoneLabel') }} 030 27991827</NuxtLink
+      >
     </address>
     <address class="contact-details__address">
       <h2 class="contact-details__headline">
         {{ t('footer.location') }}
       </h2>
-      <NuxtLink to="https://www.google.com/maps/search/Fahrschule+Wilmersdorf,Uhlandstr. 130,10717 Berlin">
+      <NuxtLink
+        to="https://www.google.com/maps/search/Fahrschule+Wilmersdorf,Uhlandstr. 130,10717 Berlin"
+      >
         Fahrschule Wilmersdorf<br />
         Uhlandstr. 30<br />
         10717 Berlin<br />
