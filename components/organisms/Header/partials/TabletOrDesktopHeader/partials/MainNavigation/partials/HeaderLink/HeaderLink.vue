@@ -74,15 +74,17 @@ const changeActivated = () => {
     @apply bg-fw-blue;
     @apply border;
     @apply border-fw-grey-11;
+    @apply font-medium;
+    @apply text-lg;
+    z-index: 5;
   }
 
   &__sub-entry {
     @apply p-4;
-    @apply border;
-    @apply border-fw-grey-11;
 
     &:hover {
       @apply bg-fw-blue-2;
+      @apply text-fw-yellow-2;
     }
   }
 }

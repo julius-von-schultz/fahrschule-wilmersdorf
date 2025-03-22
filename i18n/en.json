@@ -40,5 +40,10 @@
     "contactLabel": "Kontakt",
     "mailLabel": "\uD83D\uDCE7 Mail:",
     "telephoneLabel": "☎\uFE0F Telefon:"
+  },
+  "homeStage": {
+    "headline": "Your way to a driving licence – professionally and safely",
+    "subline": "Take off with us! Modern driving courses, personalised support and safe preparation – we will accompany you to success at every stage.",
+    "buttonLabel": "Click here to contact us"
   }
 }

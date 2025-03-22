@@ -21,7 +21,6 @@
 
   &__content {
     flex: 1;
-    @apply mt-[52px];
   }
 }
 </style>

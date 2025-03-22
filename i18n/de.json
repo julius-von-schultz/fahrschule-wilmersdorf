@@ -40,5 +40,10 @@
     "contactLabel": "Kontakt",
     "mailLabel": "\uD83D\uDCE7 Mail:",
     "telephoneLabel": "☎\uFE0F Telefon:"
+  },
+  "homeStage": {
+    "headline": "Dein Weg zum Führerschein – professionell und sicher",
+    "subline": "Starte mit uns durch! Moderne Fahrkurse, individuelle Betreuung und sichere Vorbereitung – wir begleiten dich auf jeder Etappe zum Erfolg.",
+    "buttonLabel": "Hier geht's zum Kontakt"
   }
 }
