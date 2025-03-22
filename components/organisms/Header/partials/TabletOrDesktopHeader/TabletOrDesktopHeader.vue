@@ -16,8 +16,12 @@
   @apply py-6;
 
   &__content-wrapper {
-    @apply flex flex-row;
+    @apply flex flex-col;
     @apply justify-between;
+
+    @screen lg {
+      @apply flex-row;
+    }
   }
 }
 </style>

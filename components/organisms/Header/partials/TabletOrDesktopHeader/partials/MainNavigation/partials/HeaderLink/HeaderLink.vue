@@ -6,10 +6,28 @@
         <Icon :icon="props.icon" />
       </NuxtLink>
     </div>
+    <div
+      v-show="subentries.length && active"
+      class="header-entry__sub-menu"
+      @mouseenter="changeActivated"
+      @mouseleave="changeActivated"
+    >
+      <ul>
+        <li
+          v-for="entry in subentries"
+          :key="entry.index"
+          class="header-entry__sub-entry"
+        >
+          <NuxtLink :to="entry.link">
+            {{ entry.label }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const props = defineProps({
   label: {
     type: String,
@@ -49,6 +67,17 @@ const changeActivated = () => {
       @apply cursor-pointer;
       @apply text-fw-yellow-1;
     }
+  }
+
+  &__sub-menu {
+    @apply absolute;
+    @apply bg-fw-blue;
+    @apply border-2;
+    @apply border-fw-grey-6;
+  }
+
+  &__sub-entry {
+    @apply p-4;
   }
 }
 </style>

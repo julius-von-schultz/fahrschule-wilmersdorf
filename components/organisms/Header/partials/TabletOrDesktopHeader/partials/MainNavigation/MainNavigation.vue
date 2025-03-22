@@ -6,6 +6,7 @@
       :label="entry.label"
       :icon="entry.icon"
       :link="entry.link"
+      :subentries="entry.subentries"
     />
   </div>
 </template>
@@ -22,9 +23,18 @@ const entries = computed(() => [
     subentries: [
       {
         index: 5,
-        label: t('header.about'),
-        icon: 'expand_more',
-        link: '/über-uns',
+        label: t('header.location'),
+        link: '/standort',
+      },
+      {
+        index: 6,
+        label: t('header.team'),
+        link: '/unser-team',
+      },
+      {
+        index: 7,
+        label: t('header.philosophy'),
+        link: '/unsere-philosophie',
       },
     ],
   },
@@ -33,15 +43,49 @@ const entries = computed(() => [
     label: t('header.offer'),
     icon: 'expand_more',
     link: '/angebot',
+    subentries: [
+      {
+        index: 8,
+        label: t('header.drivingLicenceCategories'),
+        link: '/fuehrerscheinklassen',
+      },
+      {
+        index: 9,
+        label: t('header.theoryLessons'),
+        link: '/theorieunterricht',
+      },
+      {
+        index: 10,
+        label: t('header.compulsoryJourneys'),
+        link: '/pflichtfahrten',
+      },
+      {
+        index: 11,
+        label: t('header.refresherLessons'),
+        link: '/auffrischungsstunden',
+      },
+    ],
   },
-  { index: 2, label: t('header.price'), icon: 'expand_more', link: '/preise' },
+  { index: 2, label: t('header.price'), link: '/preise' },
   {
     index: 3,
     label: t('header.contact'),
     icon: 'expand_more',
     link: '/kontakt',
+    subentries: [
+      {
+        index: 12,
+        label: t('header.contactForm'),
+        link: '/kontakt',
+      },
+      {
+        index: 13,
+        label: t('header.contactLocation'),
+        link: '/standort',
+      },
+    ],
   },
-  { index: 4, label: t('header.language'), icon: 'expand_more', link: '/' },
+  { index: 4, label: t('header.language'), link: '/' },
 ])
 </script>
 
@@ -49,5 +93,6 @@ const entries = computed(() => [
 .main-navigation {
   @apply flex;
   @apply gap-x-8;
+  align-items: center;
 }
 </style>
