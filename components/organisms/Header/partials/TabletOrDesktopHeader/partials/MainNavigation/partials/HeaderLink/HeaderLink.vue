@@ -61,7 +61,7 @@ const changeActivated = () => {
   &__opener {
     @apply flex;
     @apply justify-between items-center;
-    @apply text-[20px] font-semibold;
+    @apply text-[20px] font-medium;
 
     &:hover {
       @apply cursor-pointer;

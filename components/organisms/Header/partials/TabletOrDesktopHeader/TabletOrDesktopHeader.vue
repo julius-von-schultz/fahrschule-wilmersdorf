@@ -1,17 +1,20 @@
 <template>
   <div class="header">
     <ContentWrapper class="header__content-wrapper">
-      <NuxtImg
-        width="275"
-        src="/images/Logo-Fahrschule-Wilmersdorf.webp"
-        class="header__logo"
-      />
+      <NuxtLink to="/">
+        <NuxtImg
+            width="275"
+            src="/images/Logo-Fahrschule-Wilmersdorf.webp"
+            class="header__logo"
+        />
+      </NuxtLink>
       <MainNavigation />
     </ContentWrapper>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <style scoped>
 .header {

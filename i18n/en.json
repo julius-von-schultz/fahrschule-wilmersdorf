@@ -16,5 +16,23 @@
     "language": "Language",
     "german": "German",
     "english": "English"
+  },
+  "footer": {
+    "general": "General information",
+    "about": "About Us",
+    "price": "Overview of Prices",
+    "contact": "How to reach us",
+    "offer": "Our offer",
+    "drivingLicenceCategories": "Driving Licence Categories",
+    "theoryLessons": "Theory Lessons",
+    "compulsoryJourneys": "Mandatory Driving Lessons",
+    "refresherLessons": "Refresher Driving Courses",
+    "company": "The company",
+    "jobs": "Jobs",
+    "location": "Our Location",
+    "team": "Our Team",
+    "legal": "Legal information",
+    "imprint": "Imprint",
+    "imageCredit": "Image Credits"
   }
 }
