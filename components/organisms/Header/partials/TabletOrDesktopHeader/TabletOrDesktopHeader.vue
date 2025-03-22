@@ -1,7 +1,11 @@
 <template>
   <div class="header">
     <ContentWrapper class="header__content-wrapper">
-      <NuxtImg src="/images/Logo-Fahrschule-Wilmersdorf.webp" />
+      <NuxtImg
+        width="275"
+        src="/images/Logo-Fahrschule-Wilmersdorf.webp"
+        class="header__logo"
+      />
       <MainNavigation />
     </ContentWrapper>
   </div>
@@ -17,10 +21,12 @@
 
   &__content-wrapper {
     @apply flex flex-col;
-    @apply justify-between;
+    align-items: center;
+    @apply gap-y-5;
 
     @screen lg {
       @apply flex-row;
+      @apply justify-between;
     }
   }
 }

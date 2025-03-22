@@ -72,12 +72,18 @@ const changeActivated = () => {
   &__sub-menu {
     @apply absolute;
     @apply bg-fw-blue;
-    @apply border-2;
-    @apply border-fw-grey-6;
+    @apply border;
+    @apply border-fw-grey-11;
   }
 
   &__sub-entry {
     @apply p-4;
+    @apply border;
+    @apply border-fw-grey-11;
+
+    &:hover {
+      @apply bg-fw-blue-2;
+    }
   }
 }
 </style>
