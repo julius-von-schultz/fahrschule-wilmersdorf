@@ -44,6 +44,8 @@ export default {
       'fw-yellow-2': '#D1D137',
       'fw-blue': '#3858E9',
       'fw-blue-2': '#6C84EF',
+      'fw-blue-3': '#91A3F3',
+      'fw-blue-4': '#B6C2F7',
       'fw-dark-blue': '#1E2647',
       'fw-dark-blue-1': '#353b59',
       'fw-white': '#FFFFFF',

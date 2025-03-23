@@ -1,11 +1,11 @@
 <template>
   <div ref="target" class="language-switcher">
-    <div class="language-switcher__button" @click="isActive = !isActive">
-      <div class="language-switcher__label">
+    <button class="language-switcher__button" @click="isActive = !isActive">
+      <span class="language-switcher__label">
         {{ $t('header.languageSwitcherLabel') }}
-      </div>
-      <Icon :size="size" icon="language" />
-    </div>
+      </span>
+      <Icon :size="size" icon="language" class="language-switcher__icon" />
+    </button>
     <div v-if="isActive" class="language-switcher__content">
       <ul class="language-switcher__list">
         <NuxtLink
@@ -61,6 +61,14 @@ onLanguageSwitched('switcher', () => {
     @screen lg {
       @apply text-fw-white;
     }
+
+    &:hover {
+      @apply text-fw-blue-4;
+    }
+  }
+
+  &__icon {
+    align-content: center;
   }
 
   &__content {

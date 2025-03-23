@@ -65,7 +65,7 @@ const changeActivated = () => {
 
     &:hover {
       @apply cursor-pointer;
-      @apply text-fw-yellow-1;
+      @apply text-fw-blue-4;
     }
   }
 
