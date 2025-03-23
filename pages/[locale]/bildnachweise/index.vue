@@ -1,3 +1,3 @@
 <template>
-  <div>Diese Seite ist in Bearbeitung</div>
+  <ContentWrapper>Diese Seite ist in Bearbeitung</ContentWrapper>
 </template>
