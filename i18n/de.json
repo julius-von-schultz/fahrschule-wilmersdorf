@@ -91,5 +91,59 @@
       "author": "Marcus B.",
       "authorRole": "Ehemaliger Schüler"
     }
+  },
+  "offer": {},
+  "refresherLesson": {
+    "stage": {
+      "headline": "Sicher und entspannt zurück ans Steuer",
+      "text": "Verliere die Unsicherheit am Steuer – wir bieten Auffrischungsstunden für alle, die wieder sicher und selbstbewusst fahren möchten."
+    }
+  },
+  "imageCredits": {},
+  "drivingLicenceClasses": {
+    "stage": {
+      "headline": "Unsere Führerscheine",
+      "text": "Welche Führerscheinklasse passt zu dir? Erfahre mehr über die angebotenen Führerscheine – individuell und praxisnah mit der Fahrschule Wilmersdorf."
+    }
+  },
+  "imprint": {},
+  "jobs": {
+    "stage": {
+      "headline": "Karriere bei uns",
+      "text": "Werde Teil eines engagierten Teams und gestalte mit uns die Zukunft der Fahrschule Wilmersdorf."
+    }
+  },
+  "contact": {},
+  "compulsoryJourneys": {
+  "stage": {
+    "headline": "Pflichtfahrten",
+    "text": "Mit unseren Pflichtfahrten bist du bestens auf alle Fahrsituationen vorbereitet und erhältst die nötige Praxis für ein sicheres Fahren."
+    }
+  },
+  "prices": {
+    "stage": {
+      "headline": "Eröffnungspreise bis zum 30.04.2025!",
+      "text": "Spare bei deinem Führerschein! Unsere exklusiven Eröffnungspreise gelten bis zum 30.04.2025. Jetzt anmelden und von attraktiven Rabatten profitieren!"
+    }
+  },
+  "location": {},
+  "theoryLessons": {
+    "stage": {
+      "headline": "Theorieunterricht in der Fahrschule",
+      "text": "Unser Theorieunterricht vermittelt dir alles Wichtige, um sicher und selbstbewusst fahren zu lernen. Hier findest du den aktuellen Stundenplan, der dir hilft, die Theorieprüfung erfolgreich abzulegen.\n\nUnser Theorieunterricht findet Dienstags, Mittwochs und Donnerstags in der Zeit von 18:00 – 19:30 Uhr statt."
+    }
+  },
+  "team": {},
+  "philosophy": {
+    "stage": {
+      "headline": "Vielfalt und Offenheit auf der Straße",
+      "text": "Bei uns ist jeder willkommen – unabhängig von Herkunft, Geschlecht, Orientierung oder Hintergrund. Fahrschule Wilmersdorf steht für Vielfalt und Inklusion. Wir schaffen eine Lernumgebung, in der sich alle wohlfühlen können."
+    }
+  },
+  "aboutUs": {
+    "stage": {
+      "headline": "Unsere Geschichte – jung, modern, engagiert",
+      "text": "Die Fahrschule Wilmersdorf wurde am 10.02.2025 in Berlin gegründet. Mit moderner Ausbildung und Herz begleiten wir dich zum Führerschein."
+    }
   }
 }

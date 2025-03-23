@@ -42,7 +42,10 @@
               />
             </NuxtLink>
           </div>
-          <div class="footer__end-item">Designed by Julius Schultz</div>
+          <div class="footer__end-item">
+            <span>Designed by</span>
+            <NuxtLink class="footer__website-julius" to="https://juliusschultz.com/">Julius Schultz</NuxtLink>
+              </div>
         </div>
       </ContentWrapper>
     </section>
@@ -139,6 +142,12 @@ const linkColumns = [
 
     @screen md {
       @apply col-span-1;
+    }
+  }
+
+  &__website-julius {
+    &:hover {
+      @apply underline;
     }
   }
 }

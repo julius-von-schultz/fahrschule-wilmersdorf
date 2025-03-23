@@ -1,5 +1,5 @@
 <template>
-  <div class="main-navigation">
+  <nav class="main-navigation">
     <HeaderLink
       v-for="entry in entries"
       :key="entry.index"
@@ -9,7 +9,7 @@
       :subentries="entry.subentries"
     />
     <LanguageSwitcher />
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
