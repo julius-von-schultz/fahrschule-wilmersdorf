@@ -18,7 +18,6 @@ const props = defineProps({
 .content-wrapper {
   @apply h-full;
   justify-self: center;
-
   @apply w-[210px];
 
   @screen md {
