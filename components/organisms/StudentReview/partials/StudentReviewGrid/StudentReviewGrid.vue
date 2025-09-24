@@ -61,19 +61,9 @@ const reviews = [
 
 <style>
 .student-review-grid {
-  @apply grid gap-4;
-  @apply col-span-full;
-  grid-template-columns: 1fr; /* Default to 1 column for mobile */
-
-  @screen sm {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
-  }
-
-  @screen lg {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* 3 columns for medium screens and up */
-  }
+  @apply grid gap-4 col-span-full;
+  @apply grid-cols-1;
+  @apply sm:grid-cols-2;
+  @apply lg:grid-cols-3;
 }
 </style>
