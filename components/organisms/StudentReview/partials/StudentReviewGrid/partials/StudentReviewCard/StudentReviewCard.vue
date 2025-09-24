@@ -3,7 +3,11 @@
     <h3 class="student-review-card__headline">{{ headline }}</h3>
     <p class="student-review-card__text">{{ text }}</p>
     <div class="student-review-card__author">
-      <NuxtImg width="50" class="student-review-card__image" :src="authorImage" />
+      <NuxtImg
+        width="50"
+        class="student-review-card__image"
+        :src="authorImage"
+      />
       <div class="student-review-card__author-text">
         <p class="student-review-card__author-name">{{ author }}</p>
         <p class="student-review-card__author-role">{{ authorRole }}</p>

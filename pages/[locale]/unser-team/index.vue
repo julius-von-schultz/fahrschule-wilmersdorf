@@ -1,5 +1,3 @@
 <template>
-  <div class="team-page">
-    In Bearbeitung
-  </div>
+  <div class="team-page">In Bearbeitung</div>
 </template>

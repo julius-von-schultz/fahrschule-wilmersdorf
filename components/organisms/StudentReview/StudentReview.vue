@@ -1,16 +1,18 @@
 <template>
-  <article class="student-review">
-    <div class="student-review__subline">
-      {{ t('studentReview.subline') }}
-    </div>
-    <h2 class="student-review__headline">
-      {{ t('studentReview.headline') }}
-    </h2>
-    <div class="student-review__description">
-      {{ t('studentReview.description') }}
-    </div>
-    <StudentReviewGrid class="student-review__grid" />
-  </article>
+  <div class="student-review">
+    <ContentWrapper>
+      <div class="student-review__subline">
+        {{ t('studentReview.subline') }}
+      </div>
+      <h2 class="student-review__headline">
+        {{ t('studentReview.headline') }}
+      </h2>
+      <div class="student-review__description">
+        {{ t('studentReview.description') }}
+      </div>
+      <StudentReviewGrid class="student-review__grid" />
+    </ContentWrapper>
+  </div>
 </template>
 
 <script setup lang="ts">

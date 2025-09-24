@@ -44,8 +44,12 @@
           </div>
           <div class="footer__end-item">
             <span>Designed by</span>
-            <NuxtLink class="footer__website-julius" to="https://juliusschultz.com/">Julius Schultz</NuxtLink>
-              </div>
+            <NuxtLink
+              class="footer__website-julius"
+              to="https://juliusschultz.com/"
+              >Julius Schultz</NuxtLink
+            >
+          </div>
         </div>
       </ContentWrapper>
     </section>

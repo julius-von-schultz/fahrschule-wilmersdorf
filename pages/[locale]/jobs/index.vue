@@ -1,9 +1,9 @@
 <template>
   <div>
     <Stage
-        image-src="/images/bfaad-group-friends-doing-road-trip.jpg"
-        :headline="t('jobs.stage.headline')"
-        :subline="t('jobs.stage.text')"
+      image-src="/images/bfaad-group-friends-doing-road-trip.jpg"
+      :headline="t('jobs.stage.headline')"
+      :subline="t('jobs.stage.text')"
     />
   </div>
 </template>

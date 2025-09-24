@@ -8,12 +8,12 @@
           class="header__logo"
         />
       </NuxtLink>
-      <button 
-        class="header__menu-button" 
-        @click="isMenuOpen = !isMenuOpen"
+      <button
+        class="header__menu-button"
         aria-label="Toggle menu"
+        @click="isMenuOpen = !isMenuOpen"
       >
-        <Icon :icon="isMenuOpen ? 'close' : 'menu'"/>
+        <Icon :icon="isMenuOpen ? 'close' : 'menu'" />
       </button>
     </div>
 
@@ -53,11 +53,11 @@ const isMenuOpen = ref(false)
     @apply items-center;
     @apply p-2;
     transition: color 0.3s;
-    
+
     &:hover {
       @apply bg-fw-dark-blue;
     }
-    
+
     .material-icons {
       font-size: 1.5rem;
     }

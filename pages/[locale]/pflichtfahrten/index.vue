@@ -1,9 +1,9 @@
 <template>
   <div>
     <Stage
-        image-src="/images/blurred-nightlights-city.jpg"
-        :headline="t('compulsoryJourneys.stage.headline')"
-        :subline="t('compulsoryJourneys.stage.text')"
+      image-src="/images/blurred-nightlights-city.jpg"
+      :headline="t('compulsoryJourneys.stage.headline')"
+      :subline="t('compulsoryJourneys.stage.text')"
     />
   </div>
 </template>

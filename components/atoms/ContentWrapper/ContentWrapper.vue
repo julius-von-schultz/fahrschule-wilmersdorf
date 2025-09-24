@@ -18,13 +18,13 @@ const props = defineProps({
 .content-wrapper {
   @apply h-full;
   justify-self: center;
-  @apply w-[210px];
-
-  @screen md {
-    @apply w-[704px];
-  }
+  @apply px-4;
 
   &--wide {
+    @screen md {
+      @apply w-[704px];
+    }
+
     @screen lg {
       @apply w-[1064px];
     }
@@ -32,7 +32,7 @@ const props = defineProps({
 
   &--narrow {
     @screen lg {
-      @apply w-[908px];
+      @apply max-w-[908px];
     }
   }
 }

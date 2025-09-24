@@ -2,11 +2,7 @@
   <div class="stage">
     <div class="stage__inner-wrapper">
       <div class="stage__img-wrapper">
-        <NuxtImg
-          :src="imageSrc"
-          class="stage__img"
-          format="webp"
-        />
+        <NuxtImg :src="imageSrc" class="stage__img" format="webp" />
       </div>
       <div class="stage__text-container">
         <h1 class="stage__headline">
@@ -16,7 +12,7 @@
           {{ subline }}
         </p>
         <FwButton
-            v-if="buttonLabel && buttonLink"
+          v-if="buttonLabel && buttonLink"
           class="stage__button"
           :label="buttonLabel"
           :to="buttonLink"
@@ -47,7 +43,7 @@ defineProps({
   buttonLink: {
     type: String,
     default: undefined,
-  }
+  },
 })
 </script>
 

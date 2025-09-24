@@ -2,23 +2,36 @@
   <div class="mobile-nav" :class="'mobile-nav--open'">
     <div class="mobile-nav__content">
       <nav class="mobile-nav__links">
-        <div v-for="entry in entries" :key="entry.index" class="mobile-nav__item">
+        <div
+          v-for="entry in entries"
+          :key="entry.index"
+          class="mobile-nav__item"
+        >
           <div class="mobile-nav__entry" @click="toggleSubmenu(entry.index)">
             <NuxtLink :to="entry.link" class="mobile-nav__link">
               {{ entry.label }}
             </NuxtLink>
-            <Icon v-if="entry.subentries" :icon="expandedMenus.includes(entry.index) ? 'expand_less' : 'expand_more'" />
+            <Icon
+              v-if="entry.subentries"
+              :icon="
+                expandedMenus.includes(entry.index)
+                  ? 'expand_less'
+                  : 'expand_more'
+              "
+            />
           </div>
 
           <div
-              v-if="entry.subentries"
-              class="mobile-nav__submenu"
-              :class="{ 'mobile-nav__submenu--open': expandedMenus.includes(entry.index) }"
+            v-if="entry.subentries"
+            class="mobile-nav__submenu"
+            :class="{
+              'mobile-nav__submenu--open': expandedMenus.includes(entry.index),
+            }"
           >
             <NuxtLink
-                v-for="subentry in entry.subentries"
-                :key="subentry.index"
-                class="mobile-nav__sublink"
+              v-for="subentry in entry.subentries"
+              :key="subentry.index"
+              class="mobile-nav__sublink"
             >
               {{ subentry.label }}
             </NuxtLink>
@@ -32,40 +45,39 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-  const { t } = useI18n()
+const { t } = useI18n()
 
+const expandedMenus = ref<number[]>([0, 1, 2, 3, 4])
 
-  const expandedMenus = ref<number[]>([0,1,2,3,4])
-
-  const toggleSubmenu = (index: number) => {
+const toggleSubmenu = (index: number) => {
   if (expandedMenus.value.includes(index)) {
-  expandedMenus.value = expandedMenus.value.filter(i => i !== index)
-} else {
-  expandedMenus.value.push(index)
-}
+    expandedMenus.value = expandedMenus.value.filter((i) => i !== index)
+  } else {
+    expandedMenus.value.push(index)
+  }
 }
 
-  const entries = computed(() => [
+const entries = computed(() => [
   {
     index: 0,
     label: t('header.about'),
     link: '/über-uns',
     subentries: [
-  {
-    index: 5,
-    label: t('header.location'),
-    link: '/standort',
-  },
-  {
-    index: 6,
-    label: t('header.team'),
-    link: '/unser-team',
-  },
-  {
-    index: 7,
-    label: t('header.philosophy'),
-    link: '/unsere-philosophie',
-  },
+      {
+        index: 5,
+        label: t('header.location'),
+        link: '/standort',
+      },
+      {
+        index: 6,
+        label: t('header.team'),
+        link: '/unser-team',
+      },
+      {
+        index: 7,
+        label: t('header.philosophy'),
+        link: '/unsere-philosophie',
+      },
     ],
   },
   {
@@ -73,26 +85,26 @@ import { ref, computed } from 'vue'
     label: t('header.offer'),
     link: '/angebot',
     subentries: [
-  {
-    index: 8,
-    label: t('header.drivingLicenceCategories'),
-    link: '/fuehrerscheinklassen',
-  },
-  {
-    index: 9,
-    label: t('header.theoryLessons'),
-    link: '/theorieunterricht',
-  },
-  {
-    index: 10,
-    label: t('header.compulsoryJourneys'),
-    link: '/pflichtfahrten',
-  },
-  {
-    index: 11,
-    label: t('header.refresherLessons'),
-    link: '/auffrischungsstunden',
-  },
+      {
+        index: 8,
+        label: t('header.drivingLicenceCategories'),
+        link: '/fuehrerscheinklassen',
+      },
+      {
+        index: 9,
+        label: t('header.theoryLessons'),
+        link: '/theorieunterricht',
+      },
+      {
+        index: 10,
+        label: t('header.compulsoryJourneys'),
+        link: '/pflichtfahrten',
+      },
+      {
+        index: 11,
+        label: t('header.refresherLessons'),
+        link: '/auffrischungsstunden',
+      },
     ],
   },
   { index: 2, label: t('header.price'), link: '/preise' },
@@ -101,19 +113,19 @@ import { ref, computed } from 'vue'
     label: t('header.contact'),
     link: '/kontakt',
     subentries: [
-  {
-    index: 12,
-    label: t('header.contactForm'),
-    link: '/kontakt',
-  },
-  {
-    index: 13,
-    label: t('header.contactLocation'),
-    link: '/standort',
-  },
+      {
+        index: 12,
+        label: t('header.contactForm'),
+        link: '/kontakt',
+      },
+      {
+        index: 13,
+        label: t('header.contactLocation'),
+        link: '/standort',
+      },
     ],
   },
-  ])
+])
 </script>
 
 <style lang="scss" scoped>
@@ -125,7 +137,9 @@ import { ref, computed } from 'vue'
   @apply px-3 py-4;
   @apply z-0;
   @apply bg-fw-blue;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   &__links {
     @apply flex flex-col;
