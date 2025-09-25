@@ -85,6 +85,39 @@
               size="small"
             />
           </div>
+          
+          <!-- Social Media Section -->
+          <div class="mega-menu__social">
+            <h5 class="mega-menu__social-title">Folgen Sie uns</h5>
+            <div class="mega-menu__social-links">
+              <NuxtLink
+                to="https://www.instagram.com/fahrschulewilmersdorf/"
+                title="Instagram"
+                class="mega-menu__social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  icon="icons8-instagram-50"
+                  type="svg"
+                  size="small"
+                />
+              </NuxtLink>
+              <NuxtLink
+                to="https://www.tiktok.com/@fahrschulewilmersdorf"
+                title="TikTok"
+                class="mega-menu__social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  icon="icons8-tiktok-50"
+                  type="svg"
+                  size="small"
+                />
+              </NuxtLink>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -273,6 +306,38 @@ const keepOpen = () => {
     @apply text-fw-grey-3;
     @apply leading-relaxed;
     @apply opacity-90;
+  }
+
+  &__social {
+    @apply mt-8 pt-6;
+    @apply border-t border-fw-blue-4;
+  }
+
+  &__social-title {
+    @apply text-sm font-semibold text-fw-dark-blue;
+    @apply mb-3;
+  }
+
+  &__social-links {
+    @apply flex gap-3;
+  }
+
+  &__social-link {
+    @apply flex items-center justify-center;
+    @apply w-10 h-10;
+    @apply bg-fw-blue;
+    @apply rounded-full;
+    @apply transition-all duration-200;
+
+    &:hover {
+      @apply bg-fw-blue-2;
+      @apply scale-110;
+    }
+    
+    svg {
+      @apply w-5 h-5;
+      @apply text-fw-white;
+    }
   }
 
 }
