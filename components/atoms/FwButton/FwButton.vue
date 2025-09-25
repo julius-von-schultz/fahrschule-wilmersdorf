@@ -1,15 +1,6 @@
 <template>
-  <NuxtLink
-    v-if="to"
-    :class="buttonClasses"
-    :to="to"
-  >
-    <Icon
-      v-if="icon"
-      :icon="icon"
-      :size="iconSize"
-      class="fw-button__icon"
-    />
+  <NuxtLink v-if="to" :class="buttonClasses" :to="to">
+    <Icon v-if="icon" :icon="icon" :size="iconSize" class="fw-button__icon" />
     <span v-if="label" class="fw-button__label">{{ label }}</span>
   </NuxtLink>
   <button
@@ -45,7 +36,8 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'primary',
-    validator: (val) => ['primary', 'secondary', 'outline', 'plain'].includes(val),
+    validator: (val) =>
+      ['primary', 'secondary', 'outline', 'plain'].includes(val),
   },
   size: {
     type: String,

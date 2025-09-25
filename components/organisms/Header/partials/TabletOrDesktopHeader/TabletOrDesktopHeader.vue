@@ -13,13 +13,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
-
 <style scoped>
 .header {
   @apply bg-fw-blue;
   @apply text-fw-white;
   @apply py-6;
+  @apply relative;
+  @apply z-40;
 
   &__content-wrapper {
     @apply flex flex-col;

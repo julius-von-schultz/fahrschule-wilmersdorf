@@ -16,7 +16,7 @@ export default {
       'border-grey-16': 'inset 0 0 0 2px #292929',
     },
     colors: {
-      'transparent': 'transparent',
+      transparent: 'transparent',
       'fw-grey-1': '#F4F5F5',
       'fw-grey-2': '#E9EAEC',
       'fw-grey-3': '#DFE0E2',

@@ -49,7 +49,8 @@ const userBlocks: BlocksComponents = {
   }
 
   /* Lists */
-  ul, ol {
+  ul,
+  ol {
     @apply mb-4;
 
     @screen md {
@@ -123,11 +124,13 @@ const userBlocks: BlocksComponents = {
   }
 
   /* Strong and emphasis */
-  strong, b {
+  strong,
+  b {
     font-weight: 700;
   }
 
-  em, i {
+  em,
+  i {
     font-style: italic;
   }
 
