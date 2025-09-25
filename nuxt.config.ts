@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { availableLocales } from './i18n.config'
 
-const baseURL = process.env.BASE_URL || 'http://localhost:3000'
+const baseURL = process.env.BASE_URL || 'http://localhost:3000';
+const strapiUrl = process.env.STRAPI_URL || 'http://localhost:1337';
 
 const languageCodes = (process.env.LANGUAGE_CODES || 'en').split(',')
 
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
+    '@nuxtjs/strapi',
   ],
 
   ssr: true,
@@ -28,6 +30,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: ['@/assets/scss/main.scss'],
+
+  strapi: {
+    url: strapiUrl,
+    token: process.env.STRAPI_TOKEN || undefined,
+    prefix: '/api',
+    admin: '/admin',
+    version: 'v5',
+    cookie: {},
+    cookieName: 'strapi_jwt'
+  },
 
   /*
    ** Runtime Configuration

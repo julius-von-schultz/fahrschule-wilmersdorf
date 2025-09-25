@@ -19,7 +19,7 @@ defineProps({
 <style>
 .button {
   @apply block;
-  @apply p-4;
+  @apply py-4 px-5;
   @apply bg-fw-blue;
   @apply min-w-24;
   text-transform: uppercase;
