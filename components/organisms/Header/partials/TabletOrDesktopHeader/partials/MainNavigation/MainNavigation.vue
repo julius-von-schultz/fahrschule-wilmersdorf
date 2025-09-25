@@ -41,6 +41,7 @@ const { t } = useI18n()
 const megaMenuVisible = ref(false)
 const activeSection = ref<string | null>(null)
 let closeTimeout: NodeJS.Timeout | null = null
+let openTimeout: NodeJS.Timeout | null = null
 
 const entries = computed(() => [
   {
@@ -119,34 +120,66 @@ const entries = computed(() => [
 ])
 
 const handleHover = (sectionKey: string) => {
+  // Clear any existing timeouts
   if (closeTimeout) {
     clearTimeout(closeTimeout)
     closeTimeout = null
   }
+  if (openTimeout) {
+    clearTimeout(openTimeout)
+    openTimeout = null
+  }
 
-  activeSection.value = sectionKey
-  megaMenuVisible.value = true
+  // If menu is already open, switch sections immediately
+  if (megaMenuVisible.value) {
+    activeSection.value = sectionKey
+  } else {
+    // Add small delay before opening to prevent flickering when quickly moving between items
+    openTimeout = setTimeout(() => {
+      activeSection.value = sectionKey
+      megaMenuVisible.value = true
+      openTimeout = null
+    }, 100)
+  }
 }
 
 const handleLeave = () => {
+  // Clear any pending open timeout
+  if (openTimeout) {
+    clearTimeout(openTimeout)
+    openTimeout = null
+  }
+  
+  // Set longer delay for closing to prevent flickering
   closeTimeout = setTimeout(() => {
     closeMegaMenu()
-  }, 150) // Small delay to allow moving to mega menu
+  }, 300) // Increased delay for better UX
 }
 
 const closeMegaMenu = () => {
   megaMenuVisible.value = false
   activeSection.value = null
+  
+  // Clear all timeouts
   if (closeTimeout) {
     clearTimeout(closeTimeout)
     closeTimeout = null
   }
+  if (openTimeout) {
+    clearTimeout(openTimeout)
+    openTimeout = null
+  }
 }
 
 const keepMegaMenuOpen = () => {
+  // Clear all timeouts when hovering over mega menu
   if (closeTimeout) {
     clearTimeout(closeTimeout)
     closeTimeout = null
+  }
+  if (openTimeout) {
+    clearTimeout(openTimeout)
+    openTimeout = null
   }
 }
 </script>
