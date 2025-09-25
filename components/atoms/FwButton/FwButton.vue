@@ -106,6 +106,10 @@ const handleClick = (event) => {
   text-transform: uppercase;
   text-decoration: none;
 
+  &:hover:not(.fw-button--disabled) {
+    transform: translateY(-2px);
+  }
+
   &:focus {
     @apply outline-none ring-2 ring-offset-2;
   }

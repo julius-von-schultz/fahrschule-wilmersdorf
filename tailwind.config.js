@@ -14,6 +14,10 @@ export default {
       button: '0 12px 12px -12px rgba(51, 48, 0, 0.4)',
       'border-grey-80': 'inset 0 0 0 2px #CCCCCC',
       'border-grey-16': 'inset 0 0 0 2px #292929',
+      sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+      md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+      lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+      '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
     },
     colors: {
       transparent: 'transparent',
@@ -54,7 +58,14 @@ export default {
       'fw-white': '#FFFFFF',
       'fw-black': '#000000',
     },
-    extend: {},
+    extend: {
+      maxWidth: {
+        '7xl': '80rem',
+      },
+      borderWidth: {
+        DEFAULT: '1px',
+      },
+    },
   },
   plugins: [],
   fontFamily: {
@@ -88,6 +99,7 @@ export default {
     14: '3.5rem', // 56px
     15: '3.75rem', // 60px
     16: '4rem', // 64px
+    relaxed: '1.625',
   },
   opacity: {
     0: '0',

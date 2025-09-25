@@ -78,9 +78,12 @@
               Ihre moderne Fahrschule in Berlin-Wilmersdorf. Professionelle
               Ausbildung mit erfahrenen Fahrlehrern.
             </p>
-            <NuxtLink to="/kontakt" class="mega-menu__cta">
-              Jetzt anmelden
-            </NuxtLink>
+            <FwButton 
+              to="/kontakt" 
+              label="Jetzt anmelden" 
+              variant="secondary" 
+              size="small"
+            />
           </div>
         </div>
       </div>
@@ -182,14 +185,15 @@ const keepOpen = () => {
 <style lang="scss" scoped>
 .mega-menu {
   @apply absolute left-0 right-0;
-  @apply bg-fw-grey-3;
-  // @apply shadow-2xl;
+  @apply bg-fw-white;
+  @apply shadow-2xl;
   @apply border-t-4 border-fw-blue;
   @apply z-50;
   animation: slideDown 0.3s ease-out;
 
   &__content {
-    @apply p-12;
+    @apply p-10;
+    @apply max-w-7xl mx-auto;
   }
 
   &__grid {
@@ -208,23 +212,28 @@ const keepOpen = () => {
 
   &__section-title {
     @apply text-2xl font-bold text-fw-blue;
-    @apply border-b-2 border-fw-blue-4 pb-3;
+    @apply border-b-2 border-fw-blue-4 pb-3 mb-6;
   }
 
   &__links {
-    @apply space-y-4;
+    @apply space-y-2;
   }
 
   &__link {
     @apply block p-4;
     @apply transition-all duration-200;
-    // @apply border-2 border-fw-transparent;
+    @apply border border-transparent;
     @apply no-underline;
-    @apply mr-4;
+    @apply mr-8;
 
     &:hover {
-      @apply bg-fw-dark-blue border-fw-blue-4;
-      transform: translateX(-2px);
+      @apply bg-fw-grey-1 border-fw-blue-4;
+      transform: translateX(4px);
+      @apply shadow-sm;
+      
+      .mega-menu__link-title {
+        @apply text-fw-blue;
+      }
     }
   }
 
@@ -233,12 +242,13 @@ const keepOpen = () => {
   }
 
   &__link-title {
-    @apply block text-lg font-semibold text-fw-blue;
+    @apply block text-lg font-semibold text-fw-dark-blue;
     @apply transition-colors duration-200;
   }
 
   &__link-description {
-    @apply block text-sm text-fw-grey-6;
+    @apply block text-sm text-fw-grey-12;
+    @apply leading-relaxed;
   }
 
   &__info {
@@ -252,6 +262,7 @@ const keepOpen = () => {
     @apply bg-gradient-to-br from-fw-blue to-fw-blue-2;
     @apply text-fw-white p-8;
     @apply space-y-4;
+    @apply shadow-lg;
   }
 
   &__highlight-title {
@@ -259,29 +270,17 @@ const keepOpen = () => {
   }
 
   &__highlight-text {
-    @apply text-fw-dark-blue leading-6;
+    @apply text-fw-grey-3;
+    @apply leading-relaxed;
+    @apply opacity-90;
   }
 
-  &__cta {
-    @apply inline-flex items-center justify-center;
-    @apply mt-4 py-2 px-4;
-    @apply bg-transparent text-fw-white;
-    @apply border-2 border-fw-white;
-    @apply font-semibold text-sm uppercase tracking-wide;
-    @apply transition-all duration-200;
-    @apply no-underline;
-
-    &:hover {
-      @apply bg-fw-white text-fw-blue;
-      transform: translateY(-1px);
-    }
-  }
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
