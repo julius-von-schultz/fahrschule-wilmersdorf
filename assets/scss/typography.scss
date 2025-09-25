@@ -1,0 +1,142 @@
+@layer base {
+  /* Headings */
+  h1 {
+    @apply text-4xl;
+    @apply leading-10;
+    @apply mb-6;
+    font-weight: 600;
+
+    @screen md {
+      @apply text-6xl;
+      line-height: 2.75rem;
+      @apply mb-8;
+    }
+
+    @screen lg {
+      @apply text-7xl;
+      line-height: 4rem;
+      @apply mb-10;
+    }
+  }
+
+  h2 {
+    @apply text-3xl;
+    @apply leading-9;
+    @apply mb-5;
+    font-weight: 600;
+
+    @screen md {
+      @apply text-5xl;
+      line-height: 2.75rem;
+      @apply mb-6;
+    }
+
+    @screen lg {
+      @apply text-6xl;
+      line-height: 2.75rem;
+      @apply mb-8;
+    }
+  }
+
+  h3 {
+    @apply text-2xl;
+    @apply leading-8;
+    @apply mb-4;
+    font-weight: 600;
+
+    @screen md {
+      @apply text-4xl;
+      @apply leading-10;
+      @apply mb-5;
+    }
+
+    @screen lg {
+      @apply text-5xl;
+      line-height: 2.75rem;
+      @apply mb-6;
+    }
+  }
+
+  h4 {
+    @apply text-xl;
+    @apply leading-7;
+    @apply mb-4;
+    font-weight: 600;
+
+    @screen md {
+      @apply text-3xl;
+      @apply leading-9;
+      @apply mb-4;
+    }
+
+    @screen lg {
+      @apply text-4xl;
+      @apply leading-10;
+      @apply mb-5;
+    }
+  }
+
+  h5 {
+    @apply text-lg;
+    @apply leading-6;
+    @apply mb-3;
+    font-weight: 600;
+
+    @screen md {
+      @apply text-2xl;
+      @apply leading-8;
+      @apply mb-4;
+    }
+
+    @screen lg {
+      @apply text-3xl;
+      @apply leading-9;
+      @apply mb-4;
+    }
+  }
+
+  h6 {
+    @apply text-base;
+    @apply leading-6;
+    @apply mb-3;
+    font-weight: 600;
+
+    @screen md {
+      @apply text-xl;
+      @apply leading-7;
+      @apply mb-3;
+    }
+
+    @screen lg {
+      @apply text-2xl;
+      @apply leading-8;
+      @apply mb-4;
+    }
+  }
+
+  pre {
+    @apply text-sm;
+    @apply bg-fw-grey-4;
+    @apply text-fw-black;
+    @apply p-4;
+    @apply rounded-sm;
+    @apply overflow-x-auto;
+    @apply mb-4;
+    @apply font-mono;
+
+    @screen md {
+      @apply text-base;
+      @apply mb-5;
+      @apply p-6;
+    }
+
+    @screen lg {
+      @apply mb-6;
+    }
+
+    code {
+      @apply bg-transparent;
+      @apply p-0;
+    }
+  }
+}

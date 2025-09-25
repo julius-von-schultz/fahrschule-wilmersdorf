@@ -52,6 +52,7 @@ export default {
       'fw-dark-blue': '#1E2647',
       'fw-dark-blue-1': '#353b59',
       'fw-white': '#FFFFFF',
+      'fw-black': '#000000',
     },
     extend: {},
   },
@@ -82,7 +83,10 @@ export default {
     9: '2.25rem', // 36px
     10: '2.5rem', // 40px
     11: '2.75rem', // 44px
+    12: '3rem', // 48px
+    13: '3.25rem', // 52px
     14: '3.5rem', // 56px
+    15: '3.75rem', // 60px
     16: '4rem', // 64px
   },
   opacity: {

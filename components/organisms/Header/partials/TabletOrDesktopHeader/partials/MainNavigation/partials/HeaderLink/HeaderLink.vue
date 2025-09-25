@@ -12,13 +12,13 @@
       @mouseenter="changeActivated"
       @mouseleave="changeActivated"
     >
-      <ul>
+      <ul class="header-entry__sub-entry-list">
         <li
           v-for="entry in subentries"
           :key="entry.index"
           class="header-entry__sub-entry"
         >
-          <NuxtLink :to="entry.link">
+          <NuxtLink class="header-entry__sub-entry-label" :to="entry.link">
             {{ entry.label }}
           </NuxtLink>
         </li>
@@ -62,6 +62,8 @@ const changeActivated = () => {
     @apply flex;
     @apply justify-between items-center;
     @apply text-[20px] font-medium;
+    @apply text-fw-white;
+    @apply no-underline;
 
     &:hover {
       @apply cursor-pointer;
@@ -78,14 +80,29 @@ const changeActivated = () => {
     @apply text-lg;
     z-index: 5;
     @apply rounded-sm;
+
+    ul, li {
+      @apply mb-0;
+    }
   }
 
   &__sub-entry {
     @apply py-3 px-4;
+    @apply text-fw-white;
 
     &:hover {
       @apply bg-fw-blue-2;
     }
+  }
+
+  &__sub-entry-label {
+    @apply text-fw-white;
+    @apply no-underline;
+
+    &:hover {
+      @apply text-fw-white;
+    }
+
   }
 }
 </style>

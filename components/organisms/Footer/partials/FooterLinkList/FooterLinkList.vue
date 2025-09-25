@@ -48,6 +48,7 @@ defineProps({
   &__title {
     @apply font-semibold;
     @apply mb-1;
+    @apply text-lg leading-7;
 
     @screen lg {
       @apply mb-2;

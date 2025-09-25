@@ -29,45 +29,121 @@ const userBlocks: BlocksComponents = {
 
 <style lang="scss">
 .richtext {
-  .heading-1 {
-    @apply text-4xl mb-2;
-    font-weight: 600;
+  /* Paragraphs and body text */
+  p {
+    @apply text-base;
+    @apply leading-6;
+    @apply mb-4;
+    font-weight: 400;
 
     @screen md {
-      @apply text-6xl;
+      @apply text-lg;
+      @apply leading-7;
+      @apply mb-5;
     }
 
     @screen lg {
-      @apply text-7xl;
+      @apply leading-8;
+      @apply mb-6;
     }
   }
 
-  .heading-2 {
-    @apply text-xl mb-2;
+  /* Lists */
+  ul, ol {
+    @apply mb-4;
+
+    @screen md {
+      @apply mb-5;
+    }
+
+    @screen lg {
+      @apply mb-6;
+    }
+
+    li {
+      @apply text-base;
+      @apply leading-6;
+      @apply mb-2;
+      font-weight: 400;
+
+      @screen md {
+        @apply text-lg;
+        @apply leading-7;
+        @apply mb-3;
+      }
+
+      @screen lg {
+        @apply leading-8;
+      }
+    }
   }
 
-  .heading-3 {
-    @apply text-lg mb-2;
+  /* Blockquotes */
+  blockquote {
+    @apply text-lg;
+    @apply leading-7;
+    @apply mb-6;
+    @apply pl-6;
+    @apply border-l-4;
+    @apply border-fw-blue;
+    @apply italic;
+    font-weight: 400;
+
+    @screen md {
+      @apply text-xl;
+      @apply leading-8;
+      @apply mb-8;
+      @apply pl-8;
+    }
+
+    @screen lg {
+      @apply text-2xl;
+      @apply leading-9;
+      @apply mb-10;
+    }
   }
 
-  em {
-    // @apply font-bold not-italic;
-  }
-
+  /* Links */
   a {
+    @apply text-fw-white;
     @apply underline;
+    @apply transition-colors;
+    font-weight: 500;
+
+    &:hover {
+      @apply text-fw-blue-2;
+    }
+
+    &:focus {
+      @apply outline-none;
+      @apply ring-2;
+      @apply ring-fw-blue;
+      @apply ring-offset-2;
+    }
   }
 
-  ul {
-    // @apply list-disc my-2 pl-4 text-sm;
+  /* Strong and emphasis */
+  strong, b {
+    font-weight: 700;
   }
 
-  ol {
-    // @apply list-decimal mb-2 pl-4 text-base;
+  em, i {
+    font-style: italic;
   }
 
+  /* Code elements */
   code {
-    // @apply bg-purple-5/40  px-2 py-1 rounded-md;
+    @apply text-sm;
+    @apply bg-fw-grey-4;
+    @apply px-2;
+    @apply py-1;
+    @apply rounded-sm;
+    @apply font-mono;
+    font-weight: 500;
+
+    @screen md {
+      @apply text-base;
+    }
   }
 }
 </style>

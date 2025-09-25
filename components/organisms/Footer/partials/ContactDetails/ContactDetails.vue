@@ -54,6 +54,7 @@ const { t } = useI18n()
   }
 
   &__headline {
+    @apply text-lg leading-7;
     @apply font-semibold;
     @apply mb-1;
 

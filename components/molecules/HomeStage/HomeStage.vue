@@ -8,7 +8,7 @@
           format="webp"
         />
       </div>
-      <ContentWrapper width="narrow" class="home-stage__content">
+      <ContentWrapper width="wide" class="home-stage__content">
         <Richtext :text="content.text" />
         <div class="home-stage__buttons">
           <FwButton

@@ -169,6 +169,7 @@ const entries = computed(() => [
     @apply py-1;
     @apply w-full;
     @apply cursor-pointer;
+    @apply no-underline;
   }
 
   &__icon {
@@ -194,6 +195,7 @@ const entries = computed(() => [
     @apply text-fw-white;
     @apply opacity-80;
     @apply cursor-pointer;
+    @apply no-underline;
 
     &:hover {
       @apply opacity-100;
