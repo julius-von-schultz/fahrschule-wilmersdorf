@@ -46,7 +46,7 @@ const userBlocks: BlocksComponents = {
   }
 
   a {
-    // @apply text-accent-green hover:underline text-base;
+    @apply underline;
   }
 
   ul {

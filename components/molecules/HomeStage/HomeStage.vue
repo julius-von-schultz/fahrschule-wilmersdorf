@@ -10,11 +10,14 @@
       </div>
       <div class="home-stage__content">
         <Richtext :text="content.text" />
-        <div v-for="(button, index) in content.buttons" :key="index">
+        <div class="home-stage__buttons">
           <FwButton
+            v-for="(button, index) in content.buttons"
+            :key="index"
             class="home-stage__button"
             :label="button.label"
             :to="button.link"
+            :variant="button.variant"
           />
         </div>
       </div>
@@ -117,8 +120,13 @@ $home-stage-height-xl: 620px;
     @apply mb-9;
   }
 
-  &__button {
-    justify-self: center;
+  &__buttons {
+    @apply flex flex-col gap-y-6;
+    @apply items-center;
+
+    @screen md {
+      @apply flex-row justify-center gap-x-6;
+    }
   }
 }
 </style>
