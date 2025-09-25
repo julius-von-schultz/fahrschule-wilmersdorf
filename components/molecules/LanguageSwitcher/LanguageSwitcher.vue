@@ -1,6 +1,6 @@
 <template>
-  <div ref="target" class="language-switcher">
-    <button class="language-switcher__button" @click="isActive = !isActive">
+  <div ref="target" class="language-switcher" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+    <button class="language-switcher__button">
       <span class="language-switcher__label">
         {{ $t('header.languageSwitcherLabel') }}
       </span>
@@ -13,7 +13,15 @@
           :key="lang.code"
           :to="switchLocale(lang.code)"
         >
-          <li class="language-switcher__option">{{ lang.name }}</li>
+          <li class="language-switcher__option">
+            <span class="language-switcher__name">{{ lang.name }}</span>
+            <Icon
+                class="language-switcher__flag"
+                :icon="lang.code === 'de' ? 'DE' : 'EN'"
+                type="svg"
+                size="small"
+            />
+          </li>
         </NuxtLink>
       </ul>
     </div>
@@ -21,6 +29,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import { switchLocale } from '~/utils/switchLocale'
 import { useLanguageSwitch } from '~/composables/useLanguageSwitch'
@@ -38,6 +47,20 @@ const { locales } = useI18n()
 
 const target = ref(null)
 const isActive = ref(false)
+let hoverTimeout = null
+
+const handleMouseEnter = () => {
+  if (hoverTimeout) {
+    clearTimeout(hoverTimeout)
+  }
+  isActive.value = true
+}
+
+const handleMouseLeave = () => {
+  hoverTimeout = setTimeout(() => {
+    isActive.value = false
+  }, 150) // Small delay to prevent flickering when moving between elements
+}
 
 onClickOutside(target, () => (isActive.value = false))
 
@@ -88,7 +111,7 @@ onLanguageSwitched('switcher', () => {
     @apply rounded-sm;
     @apply bg-fw-blue;
     @apply relative;
-    @apply border-2;
+    @apply border-t-2 border-l-2 border-r-2 border-b;
     @apply border-fw-grey-6;
     right: 4.5rem;
 
@@ -99,15 +122,30 @@ onLanguageSwitched('switcher', () => {
   }
 
   &__option {
-    @apply pl-2.5;
-    @apply text-lg;
-    @apply leading-5;
-    @apply py-3 px-4;
+    @apply flex items-center;
+    @apply gap-y-3;
+    @apply p-4;
+    @apply text-lg leading-5;
     @apply text-fw-white;
+    @apply cursor-pointer;
+    @apply transition-colors duration-200;
+    @apply border-b border-fw-blue-4;
 
     &:hover {
-      @apply text-fw-white;
+      @apply text-fw-grey-18;
+      @apply bg-fw-blue-4;
     }
+  }
+
+  &__flag {
+    @apply w-6 h-4;
+    @apply flex-shrink-0;
+    @apply object-cover;
+    @apply rounded-sm;
+  }
+
+  &__name {
+    @apply flex-1;
   }
 }
 </style>

@@ -93,28 +93,29 @@
               <NuxtLink
                 to="https://www.instagram.com/fahrschulewilmersdorf/"
                 title="Instagram"
-                class="mega-menu__social-link"
+                class="mega-menu__social-link mega-menu__social-link--instagram"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon
-                  icon="icons8-instagram-50"
-                  type="svg"
-                  size="small"
-                />
+                <img src="/assets/svg/instagram.svg" alt="Instagram" class="mega-menu__social-icon" />
               </NuxtLink>
               <NuxtLink
                 to="https://www.tiktok.com/@fahrschulewilmersdorf"
                 title="TikTok"
-                class="mega-menu__social-link"
+                class="mega-menu__social-link mega-menu__social-link--tiktok"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon
-                  icon="icons8-tiktok-50"
-                  type="svg"
-                  size="small"
-                />
+                <img src="/assets/svg/tiktok.svg" alt="TikTok" class="mega-menu__social-icon" />
+              </NuxtLink>
+              <NuxtLink
+                to="https://www.linkedin.com/company/fahrschule-wilmersdorf/"
+                title="LinkedIn"
+                class="mega-menu__social-link mega-menu__social-link--linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/assets/svg/linkedin.svg" alt="LinkedIn" class="mega-menu__social-icon" />
               </NuxtLink>
             </div>
           </div>
@@ -324,19 +325,26 @@ const keepOpen = () => {
 
   &__social-link {
     @apply flex items-center justify-center;
-    @apply w-10 h-10;
-    @apply bg-fw-blue;
-    @apply rounded-full;
+    @apply w-12 h-12;
+    @apply bg-transparent;
+    @apply rounded-lg;
     @apply transition-all duration-200;
 
+    &--instagram,
+    &--tiktok,
+    &--linkedin {
+      @apply bg-transparent;
+    }
+
     &:hover {
-      @apply bg-fw-blue-2;
       @apply scale-110;
+      @apply bg-fw-grey-1;
+      @apply bg-opacity-10;
     }
     
-    svg {
-      @apply w-5 h-5;
-      @apply text-fw-white;
+    .mega-menu__social-icon {
+      @apply w-8 h-8;
+      @apply transition-transform duration-200;
     }
   }
 
