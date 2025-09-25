@@ -8,27 +8,33 @@
           format="webp"
         />
       </div>
-      <div class="home-stage__text-container">
-        <h1 class="home-stage__headline">
-          {{ t('homeStage.headline') }}
-        </h1>
-        <p class="home-stage__description">
-          {{ t('homeStage.subline') }}
-        </p>
-        <FwButton
-          class="home-stage__button"
-          :label="t('homeStage.buttonLabel')"
-          to="/kontakt"
-        />
+      <div class="home-stage__content">
+        <Richtext :text="content.text" />
+        <div v-for="(button, index) in content.buttons" :key="index">
+          <FwButton
+            class="home-stage__button"
+            :label="button.label"
+            :to="button.link"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
+const props = defineProps({
+  content: {
+    type: Object,
+    default: () => ({}),
+  },
+})
 
-const { t } = useI18n()
+const { content } = toRefs(props)
+
+watch(content, () => {
+  console.log('*** content', content.value)
+})
 </script>
 
 <style lang="scss">
@@ -55,7 +61,7 @@ $home-stage-height-xl: 620px;
     @apply relative;
     @apply w-full h-full;
     @apply flex;
-    @apply items-center justify-center;
+    @apply flex items-center justify-center;
     @apply text-center;
     z-index: 2;
   }
@@ -83,7 +89,7 @@ $home-stage-height-xl: 620px;
     pointer-events: none;
   }
 
-  &__text-container {
+  &__content {
     @apply relative;
     z-index: 3;
     @apply px-6;

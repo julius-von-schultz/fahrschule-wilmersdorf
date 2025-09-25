@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { availableLocales } from './i18n.config'
 
-const baseURL = process.env.BASE_URL || 'http://localhost:3000';
-const strapiUrl = process.env.STRAPI_URL || 'http://localhost:1337';
+const baseURL = process.env.BASE_URL || 'http://localhost:3000'
+const strapiUrl = process.env.STRAPI_URL || 'http://localhost:1337'
 
 const languageCodes = (process.env.LANGUAGE_CODES || 'en').split(',')
 
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     admin: '/admin',
     version: 'v5',
     cookie: {},
-    cookieName: 'strapi_jwt'
+    cookieName: 'strapi_jwt',
   },
 
   /*
