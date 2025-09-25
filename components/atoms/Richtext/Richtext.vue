@@ -30,7 +30,16 @@ const userBlocks: BlocksComponents = {
 <style lang="scss">
 .richtext {
   .heading-1 {
-    @apply text-2xl mb-2;
+    @apply text-4xl mb-2;
+    font-weight: 600;
+
+    @screen md {
+      @apply text-6xl;
+    }
+
+    @screen lg {
+      @apply text-7xl;
+    }
   }
 
   .heading-2 {

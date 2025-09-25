@@ -1,9 +1,37 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('@/assets/fonts/Inter.ttf');
+  font-family: 'PlusJakartaSans';
+  src: url('@/assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf');
 }
 
 @font-face {
-  font-family: 'Inter-Italic';
-  src: url('@/assets/fonts/Inter-Italic.ttf');
+  font-family: 'Oxygen-Regular';
+  src: url('@/assets/fonts/Oxygen/Oxygen-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('@/assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('@/assets/fonts/Lexend/Lexend-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/fonts/Inter/Inter.ttf');
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url('@/assets/fonts/Open_Sans/OpenSans.ttf');
+}
+
+body {
+  font-family: 'Open-Sans', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PlusJakartaSans', monospace;
 }

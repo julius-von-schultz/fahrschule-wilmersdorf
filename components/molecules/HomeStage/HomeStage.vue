@@ -8,7 +8,7 @@
           format="webp"
         />
       </div>
-      <div class="home-stage__content">
+      <ContentWrapper width="narrow" class="home-stage__content">
         <Richtext :text="content.text" />
         <div class="home-stage__buttons">
           <FwButton
@@ -20,7 +20,7 @@
             :variant="button.variant"
           />
         </div>
-      </div>
+      </ContentWrapper>
     </div>
   </div>
 </template>
@@ -49,15 +49,15 @@ $home-stage-height-xl: 620px;
 .home-stage {
   @apply w-full;
   @apply text-fw-white;
-  height: $home-stage-height-xs;
+  min-height: $home-stage-height-xs;
   @apply relative;
 
   @screen md {
-    height: $home-stage-height-md;
+    min-height: $home-stage-height-md;
   }
 
   @screen xl {
-    height: $home-stage-height-xl;
+    min-height: $home-stage-height-xl;
   }
 
   &__inner-wrapper {
@@ -95,10 +95,10 @@ $home-stage-height-xl: 620px;
   &__content {
     @apply relative;
     z-index: 3;
-    @apply px-6;
+    @apply p-6;
 
     @screen md {
-      @apply px-24;
+      @apply px-28;
     }
 
     @screen lg {
@@ -123,6 +123,7 @@ $home-stage-height-xl: 620px;
   &__buttons {
     @apply flex flex-col gap-y-6;
     @apply items-center;
+    @apply mt-6;
 
     @screen md {
       @apply flex-row justify-center gap-x-6;
