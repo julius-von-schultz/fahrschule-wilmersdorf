@@ -3,7 +3,8 @@
     <ContentWrapper class="header__content-wrapper">
       <NuxtLink to="/">
         <NuxtImg
-          width="275"
+          width="237"
+          height="57"
           src="/images/Logo-Fahrschule-Wilmersdorf.webp"
           class="header__logo"
         />

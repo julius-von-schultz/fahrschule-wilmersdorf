@@ -32,22 +32,21 @@
         <!-- Additional Info Section (always visible when menu is open) -->
         <div class="mega-menu__info">
           <div class="mega-menu__highlight">
-            <h4 class="mega-menu__highlight-title">Fahrschule Wilmersdorf</h4>
+            <h4 class="mega-menu__highlight-title">{{ ctaBox.headline }}</h4>
             <p class="mega-menu__highlight-text">
-              Ihre moderne Fahrschule in Berlin-Wilmersdorf. Professionelle
-              Ausbildung mit erfahrenen Fahrlehrern.
+              {{ ctaBox.description }}
             </p>
             <FwButton
-              to="/kontakt"
-              label="Jetzt anmelden"
-              variant="secondary"
-              size="small"
+              :to="ctaBox.button.link"
+              :label="ctaBox.button.label"
+              :variant="ctaBox.button.variant"
+              :size="ctaBox.button.size"
             />
           </div>
 
           <!-- Social Media Section -->
           <div class="mega-menu__social">
-            <h5 class="mega-menu__social-title">Folgen Sie uns</h5>
+            <h5 class="mega-menu__social-title">{{ t('header.socialMedia') }}</h5>
             <div class="mega-menu__social-links">
               <NuxtLink
                 to="https://www.instagram.com/fahrschulewilmersdorf/"
@@ -112,6 +111,8 @@ const props = defineProps({
   },
 })
 
+const { t } = useI18n()
+
 const { activeSection } = toRefs(props)
 
 const emit = defineEmits(['close', 'keepOpen'])
@@ -123,6 +124,10 @@ const currentHeaderEntry = computed(() => {
   return header.value?.mainNavigation?.navigationEntries?.find(
     (entry) => entry.sectionKey === activeSection.value,
   )
+})
+
+const ctaBox = computed(() => {
+  return header.value?.mainNavigation?.ctaBox
 })
 
 const closeMenu = () => {

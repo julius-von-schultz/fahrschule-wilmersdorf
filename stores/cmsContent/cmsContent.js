@@ -54,6 +54,8 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
           'mainNavigation',
           'mainNavigation.navigationEntries',
           'mainNavigation.navigationEntries.subEntries',
+          'mainNavigation.ctaBox',
+          'mainNavigation.ctaBox.button',
         ],
       })
       console.log('*** data', data)
