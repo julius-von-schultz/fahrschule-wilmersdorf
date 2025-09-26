@@ -93,10 +93,6 @@ $home-stage-height-xl: 620px;
     z-index: 3;
     @apply p-6;
 
-    @screen md {
-      @apply px-28;
-    }
-
     @screen lg {
       @apply px-40;
     }
@@ -109,6 +105,7 @@ $home-stage-height-xl: 620px;
 
     @screen md {
       @apply text-6xl;
+      line-height: 10rem;
     }
   }
 

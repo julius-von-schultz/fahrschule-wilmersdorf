@@ -25,7 +25,6 @@
 
 <script setup lang="ts">
 import { ref, computed, onBeforeMount } from 'vue'
-import MegaMenu from '~/components/organisms/Header/partials/TabletOrDesktopHeader/partials/MegaMenu/MegaMenu.vue'
 import { useCmsContentStore } from '~/stores/cmsContent/cmsContent'
 import { storeToRefs } from 'pinia'
 
@@ -117,7 +116,11 @@ const keepMegaMenuOpen = () => {
 
 .main-navigation {
   @apply flex;
-  @apply gap-x-8;
+  @apply gap-x-5;
   align-items: center;
+
+  @screen lg {
+    @apply gap-x-7;
+  }
 }
 </style>
