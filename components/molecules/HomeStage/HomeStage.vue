@@ -34,10 +34,6 @@ const props = defineProps({
 })
 
 const { content } = toRefs(props)
-
-watch(content, () => {
-  console.log('*** content', content.value)
-})
 </script>
 
 <style lang="scss">

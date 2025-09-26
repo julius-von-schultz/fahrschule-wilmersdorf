@@ -2,26 +2,18 @@
   <div class="main-navigation-wrapper">
     <nav class="main-navigation">
       <HeaderLink
-        v-for="entry in entries"
+        v-for="entry in navigationEntries"
         :key="entry.index"
         :label="entry.label"
         :icon="entry.icon"
         :link="entry.link"
-        :has-submenu="entry.subentries && entry.subentries.length > 0"
+        :has-submenu="entry.subEntries && entry.subEntries.length > 0"
         :section-key="entry.sectionKey"
         @hover="handleHover"
         @leave="handleLeave"
       />
       <LanguageSwitcher />
     </nav>
-    <!--
-    <MegaMenu
-        :is-visible="true"
-        active-section="offer"
-        @close="closeMegaMenu"
-        @keep-open="keepMegaMenuOpen"
-    />
-    -->
     <MegaMenu
       :is-visible="megaMenuVisible"
       :active-section="activeSection"
@@ -32,92 +24,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onBeforeMount } from 'vue'
 import MegaMenu from '~/components/organisms/Header/partials/TabletOrDesktopHeader/partials/MegaMenu/MegaMenu.vue'
-import { useI18n } from 'vue-i18n'
+import { useCmsContentStore } from '~/stores/cmsContent/cmsContent'
+import { storeToRefs } from 'pinia'
 
-const { t } = useI18n()
+const cmsContentStore = useCmsContentStore()
+const { header } = storeToRefs(cmsContentStore)
+
+const navigationEntries = computed(
+  () => header.value?.mainNavigation?.navigationEntries,
+)
+
+onBeforeMount(async () => {
+  await cmsContentStore.fetchHeader()
+})
 
 const megaMenuVisible = ref(false)
 const activeSection = ref<string | null>(null)
 let closeTimeout: NodeJS.Timeout | null = null
 let openTimeout: NodeJS.Timeout | null = null
-
-const entries = computed(() => [
-  {
-    index: 0,
-    label: t('header.about'),
-    icon: 'expand_more',
-    link: '/über-uns',
-    sectionKey: 'about',
-    subentries: [
-      {
-        index: 5,
-        label: t('header.location'),
-        link: '/standort',
-      },
-      {
-        index: 6,
-        label: t('header.team'),
-        link: '/unser-team',
-      },
-      {
-        index: 7,
-        label: t('header.philosophy'),
-        link: '/unsere-philosophie',
-      },
-    ],
-  },
-  {
-    index: 1,
-    label: t('header.offer'),
-    icon: 'expand_more',
-    link: '/angebot',
-    sectionKey: 'offer',
-    subentries: [
-      {
-        index: 8,
-        label: t('header.drivingLicenceCategories'),
-        link: '/fuehrerscheinklassen',
-      },
-      {
-        index: 9,
-        label: t('header.theoryLessons'),
-        link: '/theorieunterricht',
-      },
-      {
-        index: 10,
-        label: t('header.compulsoryJourneys'),
-        link: '/pflichtfahrten',
-      },
-      {
-        index: 11,
-        label: t('header.refresherLessons'),
-        link: '/auffrischungsstunden',
-      },
-    ],
-  },
-  { index: 2, label: t('header.price'), link: '/preise' },
-  {
-    index: 3,
-    label: t('header.contact'),
-    icon: 'expand_more',
-    link: '/kontakt',
-    sectionKey: 'contact',
-    subentries: [
-      {
-        index: 12,
-        label: t('header.contactForm'),
-        link: '/kontakt',
-      },
-      {
-        index: 13,
-        label: t('header.contactLocation'),
-        link: '/standort',
-      },
-    ],
-  },
-])
 
 const handleHover = (sectionKey: string) => {
   // Clear any existing timeouts
@@ -149,7 +75,7 @@ const handleLeave = () => {
     clearTimeout(openTimeout)
     openTimeout = null
   }
-  
+
   // Set longer delay for closing to prevent flickering
   closeTimeout = setTimeout(() => {
     closeMegaMenu()
@@ -159,7 +85,7 @@ const handleLeave = () => {
 const closeMegaMenu = () => {
   megaMenuVisible.value = false
   activeSection.value = null
-  
+
   // Clear all timeouts
   if (closeTimeout) {
     clearTimeout(closeTimeout)

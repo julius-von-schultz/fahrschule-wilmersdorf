@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="column-view"
-    :class="stylingClassesForColumnView"
-  >
+  <div class="column-view" :class="stylingClassesForColumnView">
     <div
       class="column-view__column1"
       :class="[

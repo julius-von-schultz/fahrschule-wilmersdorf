@@ -1,18 +1,5 @@
 {
   "header": {
-    "about": "Über uns",
-    "location": "Standort",
-    "team": "Unser Team",
-    "philosophy": "Unsere Philosophie",
-    "offer": "Unser Angebot",
-    "drivingLicenceCategories": "Führerscheinklassen",
-    "theoryLessons": "Theorieunterricht",
-    "compulsoryJourneys": "Pflichtfahrten",
-    "refresherLessons": "Auffrischungsstunden",
-    "price": "Preise",
-    "contact": "Kontakt",
-    "contactForm": "Kontaktformular",
-    "contactLocation": "Standort",
     "languageSwitcherLabel": "Sprache",
     "german": "Deutsch",
     "english": "Englisch"

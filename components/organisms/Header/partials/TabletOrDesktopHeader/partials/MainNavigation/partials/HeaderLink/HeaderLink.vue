@@ -60,7 +60,7 @@ const handleMouseLeave = () => {
     @apply text-fw-white;
     @apply no-underline;
     @apply transition-colors duration-200;
-    @apply gap-x-2;
+    @apply gap-x-3;
 
     &:hover {
       @apply cursor-pointer;

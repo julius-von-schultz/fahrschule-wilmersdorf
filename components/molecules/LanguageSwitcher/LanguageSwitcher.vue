@@ -1,5 +1,10 @@
 <template>
-  <div ref="target" class="language-switcher" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+  <div
+    ref="target"
+    class="language-switcher"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
+  >
     <button class="language-switcher__button">
       <span class="language-switcher__label">
         {{ $t('header.languageSwitcherLabel') }}
@@ -16,10 +21,10 @@
           <li class="language-switcher__option">
             <span class="language-switcher__name">{{ lang.name }}</span>
             <Icon
-                class="language-switcher__flag"
-                :icon="lang.code === 'de' ? 'DE' : 'EN'"
-                type="svg"
-                size="small"
+              class="language-switcher__flag"
+              :icon="lang.code === 'de' ? 'DE' : 'EN'"
+              type="svg"
+              size="small"
             />
           </li>
         </NuxtLink>

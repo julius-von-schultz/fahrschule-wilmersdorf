@@ -7,63 +7,22 @@
   >
     <div class="mega-menu__content">
       <div class="mega-menu__grid">
-        <!-- About Section -->
-        <div v-if="activeSection === 'about'" class="mega-menu__section">
-          <h3 class="mega-menu__section-title">{{ $t('header.about') }}</h3>
+        <div v-if="currentHeaderEntry" class="mega-menu__section">
+          <h3 class="mega-menu__section-title">
+            {{ currentHeaderEntry.label }}
+          </h3>
           <div class="mega-menu__links">
             <NuxtLink
-              v-for="item in aboutLinks"
-              :key="item.index"
-              :to="item.link"
+              v-for="subEntry in currentHeaderEntry.subEntries"
+              :key="subEntry.index"
+              :to="subEntry.link"
               class="mega-menu__link"
               @click="closeMenu"
             >
               <div class="mega-menu__link-content">
-                <span class="mega-menu__link-title">{{ item.label }}</span>
+                <span class="mega-menu__link-title">{{ subEntry.label }}</span>
                 <span class="mega-menu__link-description">{{
-                  item.description
-                }}</span>
-              </div>
-            </NuxtLink>
-          </div>
-        </div>
-
-        <!-- Offer Section -->
-        <div v-if="activeSection === 'offer'" class="mega-menu__section">
-          <h3 class="mega-menu__section-title">{{ $t('header.offer') }}</h3>
-          <div class="mega-menu__links">
-            <NuxtLink
-              v-for="item in offerLinks"
-              :key="item.index"
-              :to="item.link"
-              class="mega-menu__link"
-              @click="closeMenu"
-            >
-              <div class="mega-menu__link-content">
-                <span class="mega-menu__link-title">{{ item.label }}</span>
-                <span class="mega-menu__link-description">{{
-                  item.description
-                }}</span>
-              </div>
-            </NuxtLink>
-          </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div v-if="activeSection === 'contact'" class="mega-menu__section">
-          <h3 class="mega-menu__section-title">{{ $t('header.contact') }}</h3>
-          <div class="mega-menu__links">
-            <NuxtLink
-              v-for="item in contactLinks"
-              :key="item.index"
-              :to="item.link"
-              class="mega-menu__link"
-              @click="closeMenu"
-            >
-              <div class="mega-menu__link-content">
-                <span class="mega-menu__link-title">{{ item.label }}</span>
-                <span class="mega-menu__link-description">{{
-                  item.description
+                  subEntry.description
                 }}</span>
               </div>
             </NuxtLink>
@@ -78,14 +37,14 @@
               Ihre moderne Fahrschule in Berlin-Wilmersdorf. Professionelle
               Ausbildung mit erfahrenen Fahrlehrern.
             </p>
-            <FwButton 
-              to="/kontakt" 
-              label="Jetzt anmelden" 
-              variant="secondary" 
+            <FwButton
+              to="/kontakt"
+              label="Jetzt anmelden"
+              variant="secondary"
               size="small"
             />
           </div>
-          
+
           <!-- Social Media Section -->
           <div class="mega-menu__social">
             <h5 class="mega-menu__social-title">Folgen Sie uns</h5>
@@ -97,7 +56,11 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/assets/svg/instagram.svg" alt="Instagram" class="mega-menu__social-icon" />
+                <img
+                  src="/assets/svg/instagram.svg"
+                  alt="Instagram"
+                  class="mega-menu__social-icon"
+                />
               </NuxtLink>
               <NuxtLink
                 to="https://www.tiktok.com/@fahrschulewilmersdorf"
@@ -106,7 +69,11 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/assets/svg/tiktok.svg" alt="TikTok" class="mega-menu__social-icon" />
+                <img
+                  src="/assets/svg/tiktok.svg"
+                  alt="TikTok"
+                  class="mega-menu__social-icon"
+                />
               </NuxtLink>
               <NuxtLink
                 to="https://www.linkedin.com/company/fahrschule-wilmersdorf/"
@@ -115,7 +82,11 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/assets/svg/linkedin.svg" alt="LinkedIn" class="mega-menu__social-icon" />
+                <img
+                  src="/assets/svg/linkedin.svg"
+                  alt="LinkedIn"
+                  class="mega-menu__social-icon"
+                />
               </NuxtLink>
             </div>
           </div>
@@ -126,12 +97,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { computed, toRefs } from 'vue'
+import { useCmsContentStore } from '~/stores/cmsContent/cmsContent.js'
+import { storeToRefs } from 'pinia'
 
-const { t } = useI18n()
-
-defineProps({
+const props = defineProps({
   isVisible: {
     type: Boolean,
     default: false,
@@ -142,70 +112,18 @@ defineProps({
   },
 })
 
+const { activeSection } = toRefs(props)
+
 const emit = defineEmits(['close', 'keepOpen'])
 
-const aboutLinks = computed(() => [
-  {
-    index: 5,
-    label: t('header.location'),
-    link: '/standort',
-    description: 'Unser Standort in Wilmersdorf',
-  },
-  {
-    index: 6,
-    label: t('header.team'),
-    link: '/unser-team',
-    description: 'Lernen Sie unser Team kennen',
-  },
-  {
-    index: 7,
-    label: t('header.philosophy'),
-    link: '/unsere-philosophie',
-    description: 'Unsere Ausbildungsphilosophie',
-  },
-])
+const cmsContentStore = useCmsContentStore()
+const { header } = storeToRefs(cmsContentStore)
 
-const offerLinks = computed(() => [
-  {
-    index: 8,
-    label: t('header.drivingLicenceCategories'),
-    link: '/fuehrerscheinklassen',
-    description: 'Alle verfügbaren Führerscheinklassen',
-  },
-  {
-    index: 9,
-    label: t('header.theoryLessons'),
-    link: '/theorieunterricht',
-    description: 'Theorieunterricht Termine',
-  },
-  {
-    index: 10,
-    label: t('header.compulsoryJourneys'),
-    link: '/pflichtfahrten',
-    description: 'Sonderfahrten und Pflichtfahrten',
-  },
-  {
-    index: 11,
-    label: t('header.refresherLessons'),
-    link: '/auffrischungsstunden',
-    description: 'Auffrischung für erfahrene Fahrer',
-  },
-])
-
-const contactLinks = computed(() => [
-  {
-    index: 12,
-    label: t('header.contactForm'),
-    link: '/kontakt',
-    description: 'Kontaktieren Sie uns direkt',
-  },
-  {
-    index: 13,
-    label: t('header.contactLocation'),
-    link: '/standort',
-    description: 'Besuchen Sie uns vor Ort',
-  },
-])
+const currentHeaderEntry = computed(() => {
+  return header.value?.mainNavigation?.navigationEntries?.find(
+    (entry) => entry.sectionKey === activeSection.value,
+  )
+})
 
 const closeMenu = () => {
   emit('close')
@@ -264,7 +182,7 @@ const keepOpen = () => {
       @apply bg-fw-grey-1 border-fw-blue-4;
       transform: translateX(4px);
       @apply shadow-sm;
-      
+
       .mega-menu__link-title {
         @apply text-fw-blue;
       }
@@ -341,13 +259,12 @@ const keepOpen = () => {
       @apply bg-fw-grey-1;
       @apply bg-opacity-10;
     }
-    
+
     .mega-menu__social-icon {
       @apply w-8 h-8;
       @apply transition-transform duration-200;
     }
   }
-
 }
 
 @keyframes slideDown {

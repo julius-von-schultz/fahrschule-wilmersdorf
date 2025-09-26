@@ -8,6 +8,8 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
   const homePageContent = ref({})
   const isLoadingAboutPageContent = ref(false)
   const aboutPageContent = ref({})
+  const isLoadingHeader = ref(false)
+  const header = ref({})
 
   // TODO: Get locale from i18n
   const locale = 'de'
@@ -43,10 +45,33 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
     }
   }
 
+  const fetchHeader = async () => {
+    isLoadingHeader.value = true
+    try {
+      const data = await strapi.find('header', {
+        locale,
+        populate: [
+          'mainNavigation',
+          'mainNavigation.navigationEntries',
+          'mainNavigation.navigationEntries.subEntries',
+        ],
+      })
+      console.log('*** data', data)
+      header.value = data.data
+      return header.value
+    } catch (e) {
+      return e
+    } finally {
+      isLoadingHeader.value = false
+    }
+  }
+
   return {
     aboutPageContent,
     fetchAboutPageContent,
     homePageContent,
     fetchHomePageContent,
+    header,
+    fetchHeader,
   }
 })

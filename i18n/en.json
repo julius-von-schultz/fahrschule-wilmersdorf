@@ -1,18 +1,5 @@
 {
   "header": {
-    "about": "About us",
-    "location": "Our location",
-    "team": "Our team",
-    "philosophy": "Our philosophy",
-    "offer": "Our offer",
-    "drivingLicenceCategories": "Driving License categories",
-    "theoryLessons": "Theory lessons",
-    "compulsoryJourneys": "Mandatory driving Lessons",
-    "refresherLessons": "Refresher driving lessons",
-    "price": "Prices",
-    "contact": "Contact",
-    "contactForm": "Contact form",
-    "contactLocation": "Location",
     "languageSwitcherLabel": "Language",
     "german": "German",
     "english": "English"
