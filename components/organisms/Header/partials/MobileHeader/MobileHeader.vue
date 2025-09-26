@@ -13,7 +13,7 @@
         aria-label="Toggle menu"
         @click="isMenuOpen = !isMenuOpen"
       >
-        <Icon :icon="isMenuOpen ? 'close' : 'menu'" />
+        <BurgerIcon :is-active="isMenuOpen" />
       </button>
     </div>
 

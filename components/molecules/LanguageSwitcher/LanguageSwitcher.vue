@@ -103,6 +103,7 @@ onLanguageSwitched('switcher', () => {
     @apply absolute;
     width: 11rem;
     @apply pt-3;
+    animation: slideDown 0.3s ease-out;
 
     @screen lg {
       width: 12.75rem;
@@ -151,6 +152,17 @@ onLanguageSwitched('switcher', () => {
 
   &__name {
     @apply flex-1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
