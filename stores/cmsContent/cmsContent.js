@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
-import { useStrapi } from '#imports'
+import { useStrapi, useI18n } from '#imports'
 
 export const useCmsContentStore = defineStore('cmsContent', () => {
   const strapi = useStrapi()
+  const { locale } = useI18n()
 
   const isLoadingHomePageContent = ref(false)
   const homePageContent = ref({})
@@ -11,14 +12,11 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
   const isLoadingHeader = ref(false)
   const header = ref({})
 
-  // TODO: Get locale from i18n
-  const locale = 'de'
-
   const fetchAboutPageContent = async () => {
     isLoadingAboutPageContent.value = true
     try {
       aboutPageContent.value = await strapi.find('about', {
-        locale,
+        locale: locale.value,
         populate: '*',
       })
       return aboutPageContent.value
@@ -33,7 +31,7 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
     isLoadingHomePageContent.value = true
     try {
       const data = await strapi.find('home-page', {
-        locale,
+        locale: locale.value,
         populate: ['homeStage', 'homeStage.image', 'homeStage.buttons'],
       })
       homePageContent.value = data.data
@@ -49,7 +47,7 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
     isLoadingHeader.value = true
     try {
       const data = await strapi.find('header', {
-        locale,
+        locale: locale.value,
         populate: [
           'mainNavigation',
           'mainNavigation.navigationEntries',

@@ -7,27 +7,26 @@
   >
     <button class="language-switcher__button">
       <span class="language-switcher__label">
-        {{ $t('header.languageSwitcherLabel') }}
+        {{ t('header.languageSwitcherLabel') }}
       </span>
       <Icon :size="size" icon="language" class="language-switcher__icon" />
     </button>
     <div v-if="isActive" class="language-switcher__content">
       <ul class="language-switcher__list">
-        <NuxtLink
+        <li
           v-for="lang in locales"
           :key="lang.code"
-          :to="switchLocale(lang.code)"
+          class="language-switcher__option"
+          @click="handleLanguageSwitch(lang.code)"
         >
-          <li class="language-switcher__option">
-            <span class="language-switcher__name">{{ lang.name }}</span>
-            <Icon
-              class="language-switcher__flag"
-              :icon="lang.code === 'de' ? 'DE' : 'EN'"
-              type="svg"
-              size="small"
-            />
-          </li>
-        </NuxtLink>
+          <span class="language-switcher__name">{{ lang.name }}</span>
+          <Icon
+            class="language-switcher__flag"
+            :icon="lang.code === 'de' ? 'DE' : 'EN'"
+            type="svg"
+            size="small"
+          />
+        </li>
       </ul>
     </div>
   </div>
@@ -48,7 +47,7 @@ defineProps({
   },
 })
 
-const { locales } = useI18n()
+const { locales, t } = useI18n()
 
 const target = ref(null)
 const isActive = ref(false)
@@ -73,6 +72,11 @@ const { onLanguageSwitched } = useLanguageSwitch()
 onLanguageSwitched('switcher', () => {
   isActive.value = false
 })
+
+const handleLanguageSwitch = (langCode: string) => {
+  // Perform hard reload to the new locale URL
+  window.location.href = switchLocale(langCode)
+}
 </script>
 
 <style lang="scss">
