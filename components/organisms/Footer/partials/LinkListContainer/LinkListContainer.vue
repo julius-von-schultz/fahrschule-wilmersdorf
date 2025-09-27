@@ -11,39 +11,14 @@
     <div class="link-container__end">
       <div class="link-container__end-item">Fahrschule Wilmersdorf</div>
       <div class="link-container__end-item">Alle Rechte vorbehalten.</div>
-      <div class="link-container__end-item">
-        <NuxtLink
-            to="https://www.tiktok.com/@fahrschulewilmersdorf"
-            title="Instagram"
-            class="link-container__instagram"
-        >
-          <Icon
-              class="link-container__social-media-link"
-              icon="icons8-instagram-50"
-              type="svg"
-              size="small"
-          />
-        </NuxtLink>
-        <NuxtLink
-            href="https://www.instagram.com/fahrschulewilmersdorf/"
-            title="Tiktok"
-            class="link-container__tiktok"
-        >
-          <Icon
-              class="link-container__social-media-link"
-              icon="icons8-tiktok-50"
-              type="svg"
-              size="small"
-          />
-        </NuxtLink>
-      </div>
-      <div class="link-container__end-item">
-        <span>Designed by</span>
-        <NuxtLink
-            class="link-container__website-julius"
-            to="https://juliusschultz.com/"
-        >Julius Schultz</NuxtLink
-        >
+      <div class="link-container__end-item">Designed by Julius Schultz.</div>
+      <div class="link-container__icon-container">
+        <SocialMedia class="link-container__social-media" />
+        <Icon
+            icon="lgbtq-flag"
+            type="svg"
+            size="large"
+        />
       </div>
     </div>
   </ContentWrapper>
@@ -104,33 +79,38 @@ const linkColumns = [
     }
   }
 
-  &__link-menu-element {
-    @apply col-span-full;
+  &__end {
+    @apply flex flex-col;
 
     @screen md {
-      @apply col-span-1;
+      @apply flex-row justify-between;
     }
   }
 
-  &__end {
-    @apply grid gap-4;
-    @apply col-span-full;
-    grid-template-columns: repeat(4, 1fr);
+  &__link-menu-element {
+    @apply min-w-[200px];
   }
 
   &__end-item {
-    @apply col-span-full;
     @apply flex flex-row;
     @apply gap-x-1;
-
-    @screen md {
-      @apply col-span-1;
-    }
+    @apply min-w-[200px];
   }
 
-  &__website-julius {
-    &:hover {
-      @apply underline;
+  &__icon-container {
+    @apply flex gap-x-4;
+    align-items: flex-start;
+    @apply min-w-[200px];
+  }
+
+  &__social-media {
+    @apply flex flex-col;
+    @apply gap-y-2;
+
+    @screen md {
+      @apply flex-row;
+      align-items: flex-start;
+      @apply gap-x-4 gap-y-0;
     }
   }
 }

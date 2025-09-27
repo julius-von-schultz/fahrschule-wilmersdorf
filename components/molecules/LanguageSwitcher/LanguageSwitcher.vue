@@ -24,7 +24,7 @@
             class="language-switcher__flag"
             :icon="lang.code === 'de' ? 'DE' : 'EN'"
             type="svg"
-            size="small"
+            size="base"
           />
         </li>
       </ul>

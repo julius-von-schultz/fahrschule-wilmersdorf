@@ -1,49 +1,52 @@
 <template>
-  <PvSvg
-    v-if="type === 'svg'"
-    :name="icon"
-    :class="['icon__svg', `icon--${size}`]"
-    @click="$emit('click')"
+  <CustomSvg
+      v-if="type === 'svg'"
+      :name="icon"
+      :class="['icon__svg', `icon--${size}`]"
+      :aria-label="title ? title : undefined"
+      :aria-hidden="!title"
+      role="img"
+      :size="size"
+      @click="$emit('click')"
   />
   <span
-    v-else
-    :class="[
-      'icon__material',
-      `icon--${size}`,
-      outlined ? 'material-icons-outlined' : 'material-icons',
-    ]"
-    @click="$emit('click')"
+      v-else
+      class="material-icons"
+      :class="['icon__material', `icon--${size}`]"
+      :aria-label="title ? title : undefined"
+      :aria-hidden="!title"
+      role="img"
+      @click="$emit('click')"
   >
     {{ icon }}
   </span>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'Icon',
-  props: {
-    /**
-     * The icon to display
-     * @see [Icon List] (https://fonts.google.com/icons?selected=Material+Icons)
-     */
-    icon: {
-      type: String,
-      required: true,
-    },
-    outlined: {
-      type: Boolean,
-      default: true,
-    },
-    /**
-     * The size of the icon
-     * @values small, base, large, xlarge
-     */
-    size: {
-      type: String,
-      default: 'base',
-      validator: (val) =>
+<script setup>
+defineProps({
+  /**
+   * The icon to display
+   * @see [Icon List] (https://fonts.google.com/icons?selected=Material+Icons)
+   */
+  icon: {
+    type: String,
+    required: true,
+  },
+  /**
+   * The alternative title of the icon visible to screen readers (for better accessibility)
+   */
+  title: {
+    type: String,
+    default: '',
+  },
+  /**
+   * The size of the icon
+   * @values xsmall, small, base, large, xlarge, xxlarge, h3, paragraph
+   */
+  size: {
+    type: String,
+    default: 'base',
+    validator: (val) =>
         [
           'xsmall',
           'small',
@@ -54,77 +57,74 @@ export default defineComponent({
           'h3',
           'paragraph',
         ].includes(val),
-    },
-    /**
-     * Set the type of icon
-     * @values material-icon, svg
-     */
-    type: {
-      type: String,
-      default: 'material-icon',
-      validator: (val) => ['material-icon', 'svg'].includes(val),
-    },
   },
-  emits: ['click'],
+  /**
+   * Set the type of icon
+   * @values material-icon, svg
+   */
+  type: {
+    type: String,
+    default: 'material-icon',
+    validator: (val) => ['material-icon', 'svg'].includes(val),
+  },
 })
+
+defineEmits(['click'])
 </script>
 
 <style lang="scss">
 @import 'material-icons/iconfont/material-icons.css';
 
 .icon {
-  &__svg {
-    @apply h-10 w-10;
-
-    @screen md {
-      @apply h-16 w-16;
-    }
-
-    &.icon--small {
-      @apply w-6;
-      @apply h-6;
-    }
-  }
-
   &__material {
     &.icon--xsmall {
-      font-size: 1rem;
+      @apply text-base;
+      @apply w-4;
     }
 
     &.icon--small {
       font-size: 1.125rem;
+      @apply w-[18px];
     }
 
     &.icon--base {
-      font-size: 1.5rem;
+      @apply text-xl;
+      @apply w-6;
     }
 
     &.icon--large {
-      font-size: 2rem;
+      @apply text-3xl;
+      @apply w-8;
     }
 
     &.icon--xlarge {
       font-size: 4rem;
+      @apply w-16;
     }
 
     &.icon--xxlarge {
       font-size: 6rem;
+      @apply w-24;
 
       @screen lg {
         font-size: 8rem;
+        @apply w-32;
       }
     }
 
     &.icon--h3 {
-      font-size: 1.75rem;
+      @apply text-2xl;
+      @apply w-7;
 
       @screen lg {
-        font-size: 2.25rem;
+        @apply text-4xl;
+        @apply w-9;
       }
     }
 
     &.icon--paragraph {
-      font-size: 1.5rem;
+      @apply text-xl;
+      @apply w-6;
     }
   }
 }

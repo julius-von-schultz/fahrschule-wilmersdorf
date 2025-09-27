@@ -47,47 +47,7 @@
           <!-- Social Media Section -->
           <div class="mega-menu__social">
             <h5 class="mega-menu__social-title">{{ t('header.socialMedia') }}</h5>
-            <div class="mega-menu__social-links">
-              <NuxtLink
-                to="https://www.instagram.com/fahrschulewilmersdorf/"
-                title="Instagram"
-                class="mega-menu__social-link mega-menu__social-link--instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/svg/instagram.svg"
-                  alt="Instagram"
-                  class="mega-menu__social-icon"
-                />
-              </NuxtLink>
-              <NuxtLink
-                to="https://www.tiktok.com/@fahrschulewilmersdorf"
-                title="TikTok"
-                class="mega-menu__social-link mega-menu__social-link--tiktok"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/svg/tiktok.svg"
-                  alt="TikTok"
-                  class="mega-menu__social-icon"
-                />
-              </NuxtLink>
-              <NuxtLink
-                to="https://www.linkedin.com/company/fahrschule-wilmersdorf/"
-                title="LinkedIn"
-                class="mega-menu__social-link mega-menu__social-link--linkedin"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/svg/linkedin.svg"
-                  alt="LinkedIn"
-                  class="mega-menu__social-icon"
-                />
-              </NuxtLink>
-            </div>
+            <SocialMedia :show-lgbtq-flag="false" />
           </div>
         </div>
       </div>
@@ -99,6 +59,7 @@
 import { computed, toRefs } from 'vue'
 import { useCmsContentStore } from '~/stores/cmsContent/cmsContent.js'
 import { storeToRefs } from 'pinia'
+import SocialMedia from '~/components/molecules/SocialMedia/SocialMedia.vue'
 
 const props = defineProps({
   isVisible: {

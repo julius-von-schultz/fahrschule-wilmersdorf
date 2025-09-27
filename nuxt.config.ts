@@ -12,6 +12,7 @@ export const locales = availableLocales.filter((local: any) =>
 
 export default defineNuxtConfig({
   modules: [
+    'nuxt-icons',
     '@nuxt/eslint',
     '@nuxtjs/i18n',
     '@pinia/nuxt',

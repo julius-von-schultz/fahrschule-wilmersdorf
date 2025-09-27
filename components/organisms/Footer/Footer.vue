@@ -9,7 +9,6 @@
   </footer>
 </template>
 
-
 <style lang="scss">
 .footer {
   @apply bg-fw-dark-blue;
