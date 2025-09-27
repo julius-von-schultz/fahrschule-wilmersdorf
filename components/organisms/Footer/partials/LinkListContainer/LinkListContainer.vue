@@ -8,8 +8,8 @@
           class="link-container__link-menu-element"
       />
     </div>
-    <div v-if="isTablet" :class="['link-container__icon-container', 'link-container__icon-container--tablet']">
-      <SocialMedia class="link-container__social-media" />
+    <div v-if="isMobileOrTablet" :class="['link-container__icon-container', 'link-container__icon-container--mobile-and-tablet']">
+      <SocialMedia :colorful="false" class="link-container__social-media" />
       <Icon
           icon="lgbtq-flag"
           type="svg"
@@ -20,8 +20,8 @@
       <div class="link-container__end-item">Fahrschule Wilmersdorf</div>
       <div class="link-container__end-item">Alle Rechte vorbehalten.</div>
       <div class="link-container__end-item">Designed by Julius Schultz.</div>
-      <div :class="['link-container__icon-container', 'link-container__icon-container--mobile-and-desktop']">
-        <SocialMedia class="link-container__social-media" />
+      <div :class="['link-container__icon-container', 'link-container__icon-container--desktop']">
+        <SocialMedia :colorful="false" class="link-container__social-media" />
         <Icon
             icon="lgbtq-flag"
             type="svg"
@@ -36,7 +36,7 @@
 const { t } = useI18n()
 
 const { $breakpoints } = useNuxtApp()
-const { isTablet } = $breakpoints
+const { isMobileOrTablet } = $breakpoints
 
 const linkColumns = [
   {
@@ -133,12 +133,11 @@ const linkColumns = [
     @apply min-w-[180px];
     @apply mt-4;
 
-    &--tablet {
-      @apply hidden;
-
-      @screen md {
+    &--mobile-and-tablet {
         @apply flex;
         @apply mt-0 mb-6;
+
+      @screen md {
         @apply gap-x-8;
 
         .social-media {
@@ -151,10 +150,8 @@ const linkColumns = [
       }
     }
 
-    &--mobile-and-desktop {
-      @screen md {
-        @apply hidden;
-      }
+    &--desktop {
+      @apply hidden;
 
       @screen lg {
         @apply mt-0;

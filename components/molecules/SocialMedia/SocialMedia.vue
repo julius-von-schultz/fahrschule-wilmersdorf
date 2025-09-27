@@ -10,7 +10,7 @@
       rel="noopener noreferrer"
     >
       <Icon
-        :icon="socialLink.icon"
+        :icon="getIconName(socialLink.icon)"
         type="svg"
         :size="socialLink.size || 'small'"
         class="social-media__icon"
@@ -20,6 +20,20 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  colorful: {
+    type: Boolean,
+    default: true
+  }
+});
+
+const getIconName = (icon) => {
+  if (props.colorful) {
+    return icon;
+  }
+  return `${icon}-simple`;
+};
+
 const socialLinks = computed(() => [
   {
     name: 'Instagram',
