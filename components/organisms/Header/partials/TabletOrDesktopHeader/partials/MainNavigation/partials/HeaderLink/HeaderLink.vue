@@ -54,13 +54,18 @@ const handleMouseLeave = () => {
 <style lang="scss">
 .header-entry {
   &__opener {
-    @apply flex;
-    @apply justify-between items-center;
-    @apply text-[20px] font-medium;
+    @apply flex justify-between items-center;
+    @apply gap-x-3;
+    @apply text-lg leading-6;
+    @apply py-2;
+    @apply font-medium;
     @apply text-fw-white;
     @apply no-underline;
     @apply transition-colors duration-200;
-    @apply gap-x-3;
+
+    @screen lg {
+      @apply py-3;
+    }
 
     &:hover {
       @apply cursor-pointer;
