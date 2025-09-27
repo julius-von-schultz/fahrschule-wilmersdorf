@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@nuxtjs/strapi',
+    'nuxt-viewport',
   ],
 
   ssr: true,

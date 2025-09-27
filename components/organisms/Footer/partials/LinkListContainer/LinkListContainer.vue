@@ -71,8 +71,8 @@ const linkColumns = [
   @apply flex flex-col;
 
   &__link-menu {
+    @apply flex flex-col gap-y-4;
     @apply mb-8;
-    @apply flex flex-col;
 
     @screen md {
       @apply flex-row justify-between;
@@ -88,29 +88,38 @@ const linkColumns = [
   }
 
   &__link-menu-element {
-    @apply min-w-[200px];
+    @apply min-w-[180px];
+
+    @screen lg {
+      @apply min-w-[200px];
+    }
+
   }
 
   &__end-item {
-    @apply flex flex-row;
-    @apply gap-x-1;
-    @apply min-w-[200px];
+    @apply flex flex-row gap-x-1;
+    @apply min-w-[180px];
+    @apply text-sm leading-5;
+    @apply mb-1;
+
+    @screen lg {
+      @apply min-w-[200px];
+      @apply text-base leading-6;
+    }
   }
 
   &__icon-container {
     @apply flex gap-x-4;
     align-items: flex-start;
-    @apply min-w-[200px];
-  }
-
-  &__social-media {
-    @apply flex flex-col;
-    @apply gap-y-2;
+    @apply min-w-[180px];
+    @apply mt-4;
 
     @screen md {
-      @apply flex-row;
-      align-items: flex-start;
-      @apply gap-x-4 gap-y-0;
+      @apply mt-0;
+    }
+
+    @screen lg {
+      @apply min-w-[200px];
     }
   }
 }

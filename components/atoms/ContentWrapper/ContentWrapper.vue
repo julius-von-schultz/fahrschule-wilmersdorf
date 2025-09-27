@@ -22,7 +22,7 @@ const props = defineProps({
 
   &--wide {
     @screen md {
-      @apply w-[704px];
+      @apply w-[756px];
     }
 
     @screen lg {

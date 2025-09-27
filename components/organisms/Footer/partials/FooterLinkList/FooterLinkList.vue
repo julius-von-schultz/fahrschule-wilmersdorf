@@ -39,29 +39,31 @@ defineProps({
 
 <style lang="scss">
 .link-list {
-  @apply mb-2;
-
-  @screen lg {
-    @apply mb-0;
-  }
-
   &__title {
     @apply font-semibold;
     @apply mb-1;
-    @apply text-lg leading-7;
-
+    @apply text-base leading-6;
+    
+    @screen md {
+      @apply text-lg leading-7;
+    }
+    
     @screen lg {
       @apply mb-2;
     }
   }
 
   &__item {
-    @apply pt-1;
-    @apply text-sm;
-
+    @apply mb-1;
+    @apply text-sm leading-5;
+    
+    @screen md {
+      @apply mb-1.5;
+    }
+    
     @screen lg {
-      @apply pt-2;
       @apply text-base;
+      @apply mb-2;
     }
 
     &--with-hover {

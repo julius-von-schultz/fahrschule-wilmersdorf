@@ -20,8 +20,7 @@
 </template>
 
 <script setup>
-
-const socialLinks = [
+const socialLinks = computed(() => [
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/fahrschulewilmersdorf/',
@@ -40,12 +39,12 @@ const socialLinks = [
     icon: 'linkedin',
     size: 'large'
   }
-];
+]);
 </script>
 
 <style lang="scss">
 .social-media {
-  @apply flex gap-4;
+  @apply flex flex-row gap-x-4;
 
   .icon__svg {
     width: unset;
