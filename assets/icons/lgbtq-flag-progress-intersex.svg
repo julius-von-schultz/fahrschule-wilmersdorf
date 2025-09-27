@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Progress Pride Flag">
+  <!-- Rainbow stripes -->
+  <rect x="0" y="0" width="24" height="4" fill="#E40303"/>
+  <rect x="0" y="4" width="24" height="4" fill="#FF8C00"/>
+  <rect x="0" y="8" width="24" height="4" fill="#FFED00"/>
+  <rect x="0" y="12" width="24" height="4" fill="#008026"/>
+  <rect x="0" y="16" width="24" height="4" fill="#004DFF"/>
+  <rect x="0" y="20" width="24" height="4" fill="#750787"/>
+
+  <!-- Yellow triangle -->
+  <polygon points="0,0 8,12 0,24" fill="#FFD800"/>
+
+  <!-- Chevrons from innermost (white) to outermost (black) -->
+  <!-- White -->
+  <polygon points="0,0 6,12 0,24 2,24 8,12 2,0" fill="#FFFFFF"/>
+  <!-- Pink -->
+  <polygon points="0,0 7,12 0,24 3,24 9,12 3,0" fill="#F7A8B8"/>
+  <!-- Light Blue -->
+  <polygon points="0,0 8,12 0,24 4,24 10,12 4,0" fill="#55CDFC"/>
+  <!-- Brown -->
+  <polygon points="0,0 10,12 0,24 6,24 12,12 6,0" fill="#613915"/>
+  <!-- Black (outermost) -->
+  <polygon points="0,0 12.5,12 0,24 7,24 13.5,12 7,0" fill="#000000"/>
+</svg>

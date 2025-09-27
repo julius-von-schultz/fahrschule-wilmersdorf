@@ -11,7 +11,7 @@
     <div v-if="isMobileOrTablet" :class="['link-container__icon-container', 'link-container__icon-container--mobile-and-tablet']">
       <SocialMedia :colorful="false" class="link-container__social-media" />
       <Icon
-          icon="lgbtq-flag"
+          icon="lgbtq-flag-progress-intersex"
           type="svg"
           size="large"
       />
@@ -23,7 +23,7 @@
       <div :class="['link-container__icon-container', 'link-container__icon-container--desktop']">
         <SocialMedia :colorful="false" class="link-container__social-media" />
         <Icon
-            icon="lgbtq-flag"
+            icon="lgbtq-flag-progress-intersex"
             type="svg"
             size="large"
         />
