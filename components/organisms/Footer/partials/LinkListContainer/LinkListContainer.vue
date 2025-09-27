@@ -8,11 +8,19 @@
           class="link-container__link-menu-element"
       />
     </div>
+    <div v-if="isTablet" :class="['link-container__icon-container', 'link-container__icon-container--tablet']">
+      <SocialMedia class="link-container__social-media" />
+      <Icon
+          icon="lgbtq-flag"
+          type="svg"
+          size="large"
+      />
+    </div>
     <div class="link-container__end">
       <div class="link-container__end-item">Fahrschule Wilmersdorf</div>
       <div class="link-container__end-item">Alle Rechte vorbehalten.</div>
       <div class="link-container__end-item">Designed by Julius Schultz.</div>
-      <div class="link-container__icon-container">
+      <div :class="['link-container__icon-container', 'link-container__icon-container--mobile-and-desktop']">
         <SocialMedia class="link-container__social-media" />
         <Icon
             icon="lgbtq-flag"
@@ -26,6 +34,9 @@
 
 <script setup>
 const { t } = useI18n()
+
+const { $breakpoints } = useNuxtApp()
+const { isTablet } = $breakpoints
 
 const linkColumns = [
   {
@@ -68,7 +79,11 @@ const linkColumns = [
 
 <style lang="scss">
 .link-container {
-  @apply flex flex-col;
+  @apply flex flex-col items-center;
+
+  @screen lg {
+    @apply items-stretch;
+  }
 
   &__link-menu {
     @apply flex flex-col gap-y-4;
@@ -105,6 +120,10 @@ const linkColumns = [
     @screen lg {
       @apply min-w-[200px];
       @apply text-base leading-6;
+
+      .social-media {
+        @apply gap-x-4;
+      }
     }
   }
 
@@ -114,12 +133,33 @@ const linkColumns = [
     @apply min-w-[180px];
     @apply mt-4;
 
-    @screen md {
-      @apply mt-0;
+    &--tablet {
+      @apply hidden;
+
+      @screen md {
+        @apply flex;
+        @apply mt-0 mb-6;
+        @apply gap-x-8;
+
+        .social-media {
+          @apply gap-x-8;
+        }
+      }
+
+      @screen lg {
+        @apply hidden;
+      }
     }
 
-    @screen lg {
-      @apply min-w-[200px];
+    &--mobile-and-desktop {
+      @screen md {
+        @apply hidden;
+      }
+
+      @screen lg {
+        @apply mt-0;
+        @apply flex;
+      }
     }
   }
 }
