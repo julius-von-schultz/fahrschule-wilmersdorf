@@ -51,7 +51,9 @@ import { storeToRefs } from 'pinia'
 const cmsContentStore = useCmsContentStore()
 const { header } = storeToRefs(cmsContentStore)
 
-const entries = computed(() => header.value?.mainNavigation?.navigationEntries || [])
+const entries = computed(
+  () => header.value?.mainNavigation?.navigationEntries || [],
+)
 
 // Initialize all accordions as open based on entries that have subEntries
 const expandedMenus = ref<number[]>([])
@@ -61,8 +63,8 @@ onBeforeMount(async () => {
   // Once data is loaded, set all entries with subEntries to be expanded
   if (header.value?.mainNavigation?.navigationEntries) {
     expandedMenus.value = header.value.mainNavigation.navigationEntries
-      .filter(entry => entry.subEntries && entry.subEntries.length > 0)
-      .map(entry => entry.index)
+      .filter((entry) => entry.subEntries && entry.subEntries.length > 0)
+      .map((entry) => entry.index)
   }
 })
 

@@ -43,11 +43,11 @@ defineProps({
     @apply font-semibold;
     @apply mb-1;
     @apply text-base leading-6;
-    
+
     @screen md {
       @apply text-lg leading-7;
     }
-    
+
     @screen lg {
       @apply mb-2;
     }
@@ -56,11 +56,11 @@ defineProps({
   &__item {
     @apply mb-1;
     @apply text-sm leading-5;
-    
+
     @screen md {
       @apply mb-1.5;
     }
-    
+
     @screen lg {
       @apply text-base;
       @apply mb-2;

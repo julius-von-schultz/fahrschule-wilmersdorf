@@ -1,12 +1,12 @@
 <template>
   <nuxt-icon
-      v-if="name"
-      :class="[
+    v-if="name"
+    :class="[
       { 'custom-svg--large': size === 'large' },
       { 'custom-svg--small': size === 'small' },
     ]"
-      :name="`${name}`"
-      filled
+    :name="`${name}`"
+    filled
   />
 </template>
 

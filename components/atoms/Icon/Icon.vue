@@ -1,22 +1,22 @@
 <template>
   <CustomSvg
-      v-if="type === 'svg'"
-      :name="icon"
-      :class="['icon__svg', `icon--${size}`]"
-      :aria-label="title ? title : undefined"
-      :aria-hidden="!title"
-      role="img"
-      :size="size"
-      @click="$emit('click')"
+    v-if="type === 'svg'"
+    :name="icon"
+    :class="['icon__svg', `icon--${size}`]"
+    :aria-label="title ? title : undefined"
+    :aria-hidden="!title"
+    role="img"
+    :size="size"
+    @click="$emit('click')"
   />
   <span
-      v-else
-      class="material-icons"
-      :class="['icon__material', `icon--${size}`]"
-      :aria-label="title ? title : undefined"
-      :aria-hidden="!title"
-      role="img"
-      @click="$emit('click')"
+    v-else
+    class="material-icons"
+    :class="['icon__material', `icon--${size}`]"
+    :aria-label="title ? title : undefined"
+    :aria-hidden="!title"
+    role="img"
+    @click="$emit('click')"
   >
     {{ icon }}
   </span>
@@ -47,16 +47,16 @@ defineProps({
     type: String,
     default: 'base',
     validator: (val) =>
-        [
-          'xsmall',
-          'small',
-          'base',
-          'large',
-          'xlarge',
-          'xxlarge',
-          'h3',
-          'paragraph',
-        ].includes(val),
+      [
+        'xsmall',
+        'small',
+        'base',
+        'large',
+        'xlarge',
+        'xxlarge',
+        'h3',
+        'paragraph',
+      ].includes(val),
   },
   /**
    * Set the type of icon

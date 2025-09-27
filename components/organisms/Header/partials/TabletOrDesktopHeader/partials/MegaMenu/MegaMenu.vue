@@ -46,7 +46,9 @@
 
           <!-- Social Media Section -->
           <div class="mega-menu__social">
-            <h5 class="mega-menu__social-title">{{ t('header.socialMedia') }}</h5>
+            <h5 class="mega-menu__social-title">
+              {{ t('header.socialMedia') }}
+            </h5>
             <SocialMedia :show-lgbtq-flag="false" />
           </div>
         </div>

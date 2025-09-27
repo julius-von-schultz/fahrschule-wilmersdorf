@@ -11,6 +11,8 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
   const aboutPageContent = ref({})
   const isLoadingHeader = ref(false)
   const header = ref({})
+  const isLoadingFooter = ref(false)
+  const footer = ref({})
 
   const fetchAboutPageContent = async () => {
     isLoadingAboutPageContent.value = true
@@ -56,13 +58,28 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
           'mainNavigation.ctaBox.button',
         ],
       })
-      console.log('*** data', data)
       header.value = data.data
       return header.value
     } catch (e) {
       return e
     } finally {
       isLoadingHeader.value = false
+    }
+  }
+
+  const fetchFooter = async () => {
+    isLoadingFooter.value = true
+    try {
+      const data = await strapi.find('footer', {
+        locale: locale.value,
+        populate: ['linkLists', 'linkLists.links'],
+      })
+      footer.value = data.data
+      return footer.value
+    } catch (e) {
+      return e
+    } finally {
+      isLoadingFooter.value = false
     }
   }
 
@@ -73,5 +90,7 @@ export const useCmsContentStore = defineStore('cmsContent', () => {
     fetchHomePageContent,
     header,
     fetchHeader,
+    footer,
+    fetchFooter,
   }
 })

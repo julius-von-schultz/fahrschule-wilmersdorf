@@ -15,19 +15,17 @@
       </h2>
       <p>{{ t('footer.mailLabel') }}</p>
       <NuxtLink to="mailto:fahrschule-wilmersdorf@berlin.de"
-      ><p>fahrschule-wilmersdorf@berlin.de</p></NuxtLink
+        ><p>fahrschule-wilmersdorf@berlin.de</p></NuxtLink
       >
       <p>{{ t('footer.telephoneLabel') }}</p>
-      <NuxtLink to="tel:03027991827"
-      ><p>030 27991827</p></NuxtLink
-      >
+      <NuxtLink to="tel:03027991827"><p>030 27991827</p></NuxtLink>
     </address>
     <address class="contact-details__address">
       <h2 class="contact-details__headline">
         {{ t('footer.location') }}
       </h2>
       <NuxtLink
-          to="https://www.google.com/maps/search/Fahrschule+Wilmersdorf,Uhlandstr. 130,10717 Berlin"
+        to="https://www.google.com/maps/search/Fahrschule+Wilmersdorf,Uhlandstr. 130,10717 Berlin"
       >
         <p>Fahrschule Wilmersdorf</p>
         <p>Uhlandstr. 30</p>

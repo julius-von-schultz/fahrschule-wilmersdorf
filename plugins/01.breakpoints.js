@@ -1,5 +1,5 @@
-import { defineNuxtPlugin } from "#app";
-import { useViewport } from "#imports";
+import { defineNuxtPlugin } from '#app'
+import { useViewport } from '#imports'
 
 export default defineNuxtPlugin(() => {
   const viewport = useViewport()

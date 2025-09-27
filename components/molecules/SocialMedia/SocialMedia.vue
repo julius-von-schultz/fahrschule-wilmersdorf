@@ -23,37 +23,37 @@
 const props = defineProps({
   colorful: {
     type: Boolean,
-    default: true
-  }
-});
+    default: true,
+  },
+})
 
 const getIconName = (icon) => {
   if (props.colorful) {
-    return icon;
+    return icon
   }
-  return `${icon}-simple`;
-};
+  return `${icon}-simple`
+}
 
 const socialLinks = computed(() => [
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/fahrschulewilmersdorf/',
     icon: 'instagram-new',
-    size: 'large'
+    size: 'large',
   },
   {
     name: 'TikTok',
     url: 'https://www.tiktok.com/@fahrschulewilmersdorf',
     icon: 'tiktok',
-    size: 'large'
+    size: 'large',
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/company/fahrschule-wilmersdorf/',
     icon: 'linkedin',
-    size: 'large'
-  }
-]);
+    size: 'large',
+  },
+])
 </script>
 
 <style lang="scss">
