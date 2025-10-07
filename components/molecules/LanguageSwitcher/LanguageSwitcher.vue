@@ -87,8 +87,7 @@ const handleLanguageSwitch = (langCode: string) => {
     @apply flex flex-row;
     @apply gap-x-3;
     @apply cursor-pointer;
-    @apply text-xl;
-    @apply font-medium;
+    @apply text-lg leading-6;
 
     @screen lg {
       @apply text-fw-white;
